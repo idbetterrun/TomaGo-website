@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番达 TomaGo - 全球社区即时零售网络</title>
+    <meta name="description" content="TomaGo 品牌官网原型，展示品牌愿景、业务生态、组织架构、多地区与多语言体验。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="./assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body class="text-black selection:bg-tomato selection:text-white" data-region="cn" data-lang="cn" data-supported="true">
+
+    <!-- Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-ring hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center text-white" id="nav-inner">
+            <!-- Logo -->
+            <a href="#home" class="hover-trigger flex items-center gap-3">
+                <img id="main-brand-logo" src="./images/brand/tomago-light.png" alt="TomaGo"
+                    class="logo-balanced w-auto object-contain">
+            </a>
+
+            <!-- SPA Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <div class="relative nav-group">
+                    <a href="#brand-story"
+                        class="text-xs font-bold uppercase tracking-widest hover-trigger opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="lang-text cn">品牌</span><span class="lang-text tw">品牌</span><span
+                            class="lang-text en">Brand</span><span class="lang-text jp">ブランド</span><span
+                            class="lang-text kr">브랜드</span><span class="lang-text pt">Marca</span>
+                    </a>
+                    <div class="nav-menu">
+                        <a href="#brand-story" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">品牌故事</span><span class="lang-text tw">品牌故事</span><span
+                                class="lang-text en">Brand Story</span><span class="lang-text jp">ブランドストーリー</span><span
+                                class="lang-text kr">브랜드 스토리</span><span class="lang-text pt">Historia</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="#company-philosophy" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">公司理念</span><span class="lang-text tw">公司理念</span><span
+                                class="lang-text en">Philosophy</span><span class="lang-text jp">企業理念</span><span
+                                class="lang-text kr">기업 철학</span><span class="lang-text pt">Filosofia</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+                <div class="relative nav-group">
+                    <a href="#market"
+                        class="text-xs font-bold uppercase tracking-widest hover-trigger opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="lang-text cn">业务</span><span class="lang-text tw">業務</span><span
+                            class="lang-text en">Business</span><span class="lang-text jp">事業</span><span
+                            class="lang-text kr">비즈니스</span><span class="lang-text pt">Negocios</span>
+                    </a>
+                    <div class="nav-menu">
+                        <a href="#market" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">市集</span><span class="lang-text tw">市集</span><span
+                                class="lang-text en">Market</span><span class="lang-text jp">マーケット</span><span
+                                class="lang-text kr">마켓</span><span class="lang-text pt">Market</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="#mini" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">小店</span><span class="lang-text tw">小店</span><span
+                                class="lang-text en">Mini</span><span class="lang-text jp">ミニ</span><span
+                                class="lang-text kr">미니</span><span class="lang-text pt">Mini</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="#partner" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">合作生态</span><span class="lang-text tw">合作生態</span><span
+                                class="lang-text en">Partner</span><span class="lang-text jp">パートナー</span><span
+                                class="lang-text kr">파트너</span><span class="lang-text pt">Parceiros</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+                <div class="relative nav-group">
+                    <a href="#hq-page"
+                        class="text-xs font-bold uppercase tracking-widest hover-trigger opacity-70 hover:opacity-100 transition-opacity">
+                        <span class="lang-text cn">架构</span><span class="lang-text tw">架構</span><span
+                            class="lang-text en">Structure</span><span class="lang-text jp">組織</span><span
+                            class="lang-text kr">구조</span><span class="lang-text pt">Estrutura</span>
+                    </a>
+                    <div class="nav-menu">
+                        <a href="#hq-page" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">公司总部</span><span class="lang-text tw">公司總部</span><span
+                                class="lang-text en">Headquarters</span><span class="lang-text jp">本社</span><span
+                                class="lang-text kr">본사</span><span class="lang-text pt">Sede</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="#business-groups-page" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">事业群</span><span class="lang-text tw">事業群</span><span
+                                class="lang-text en">Business Groups</span><span class="lang-text jp">事業群</span><span
+                                class="lang-text kr">사업군</span><span class="lang-text pt">Grupos</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="#ops-center-page" class="nav-link-secondary hover-trigger"><span
+                                class="lang-text cn">运营中心</span><span class="lang-text tw">運營中心</span><span
+                                class="lang-text en">Operations</span><span class="lang-text jp">運営センター</span><span
+                                class="lang-text kr">운영 센터</span><span class="lang-text pt">Operacoes</span><i
+                                class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auth & Action -->
+            <div class="flex items-center gap-6">
+                <!-- Guest -->
+                <button onclick="openAuthModal('login')"
+                    class="auth-guest hover-trigger text-xs font-bold uppercase tracking-widest opacity-70 hover:opacity-100 flex items-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span class="lang-text cn">登录</span><span class="lang-text tw">登入</span><span
+                        class="lang-text en">Login</span><span class="lang-text jp">ログイン</span><span
+                        class="lang-text kr">로그인</span><span class="lang-text pt">Entrar</span>
+                </button>
+                <!-- Logged In -->
+                <a href="#profile"
+                    class="auth-user hover-trigger text-xs font-bold uppercase tracking-widest flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=TomaGoer&backgroundColor=E35453"
+                        class="w-5 h-5 rounded-full bg-tomato border border-white/50">
+                    <span class="hidden md:inline">TomaGoer</span>
+                </a>
+                <!-- Download -->
+                <a href="#download-section"
+                    class="auth-guest hover-trigger bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors hidden md:block">
+                    <span class="lang-text cn">获取 App</span><span class="lang-text tw">獲取 App</span><span
+                        class="lang-text en">Get App</span><span class="lang-text jp">アプリを入手</span><span
+                        class="lang-text kr">앱 다운로드</span><span class="lang-text pt">Obter App</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== Main SPA Container ==================== -->
+    <main id="app-root">
+
+        <!-- [VIEW]: HOME -->
+        <div id="view-home" class="page-view active">
+            <div class="fixed inset-0 z-[-1] overflow-hidden bg-black home-bg-system">
+                <div id="bg-1" class="bg-layer opacity-100 transform scale-100"
+                    style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2000&auto=format&fit=crop');">
+                </div>
+                <div id="bg-2" class="bg-layer opacity-0 transform scale-105"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black"></div>
+            </div>
+
+            <section class="min-h-screen w-full flex items-center justify-center px-4 pt-20">
+                <div id="interactive-glass"
+                    class="glass-box rounded-3xl md:rounded-[3rem] p-8 md:p-16 max-w-4xl w-full text-center flex flex-col items-center justify-center hover-trigger relative z-10">
+                    <div class="mb-6 opacity-80">
+                        <span
+                            class="text-white border border-white/30 rounded-full px-4 py-1 text-xs tracking-[0.2em] uppercase">Community
+                            Retail Network</span>
+                    </div>
+
+                    <!-- Roller Text CN -->
+                    <h1
+                        class="lang-block cn text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <span>从</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">晨露</div>
+                                    <div class="roller-item">产地</div>
+                                    <div class="roller-item">枝头</div>
+                                </div>
+                            </div>
+                            <span>到</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">门前</div>
+                                    <div class="roller-item">餐桌</div>
+                                    <div class="roller-item">手中</div>
+                                </div>
+                            </div>
+                            <span>只需</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30分钟</div>
+                                    <div class="roller-item">12小时</div>
+                                    <div class="roller-item">极速</div>
+                                </div>
+                            </div>
+                            <span>。</span>
+                        </div>
+                    </h1>
+                    <!-- Roller Text EN -->
+                    <h1
+                        class="lang-block en text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <span>From</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">Farm</div>
+                                    <div class="roller-item">Origin</div>
+                                    <div class="roller-item">Branch</div>
+                                </div>
+                            </div>
+                            <span>to</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">Door</div>
+                                    <div class="roller-item">Table</div>
+                                    <div class="roller-item">Hand</div>
+                                </div>
+                            </div>
+                            <span>in</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30 Mins</div>
+                                    <div class="roller-item">12 Hrs</div>
+                                    <div class="roller-item">a Flash</div>
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+                    <!-- Roller Text TW -->
+                    <h1
+                        class="lang-block tw text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <span>從</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">晨露</div>
+                                    <div class="roller-item">產地</div>
+                                    <div class="roller-item">枝頭</div>
+                                </div>
+                            </div>
+                            <span>到</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">門前</div>
+                                    <div class="roller-item">餐桌</div>
+                                    <div class="roller-item">手中</div>
+                                </div>
+                            </div>
+                            <span>只需</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30分鐘</div>
+                                    <div class="roller-item">12小時</div>
+                                    <div class="roller-item">極速</div>
+                                </div>
+                            </div>
+                            <span>。</span>
+                        </div>
+                    </h1>
+                    <!-- Roller Text JP -->
+                    <h1
+                        class="lang-block jp text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">農場</div>
+                                    <div class="roller-item">産地</div>
+                                    <div class="roller-item">枝</div>
+                                </div>
+                            </div>
+                            <span>から</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">玄関</div>
+                                    <div class="roller-item">食卓</div>
+                                    <div class="roller-item">手元</div>
+                                </div>
+                            </div>
+                            <span>まで、わずか</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30分</div>
+                                    <div class="roller-item">12時間</div>
+                                    <div class="roller-item">超速</div>
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+                    <!-- Roller Text KR -->
+                    <h1
+                        class="lang-block kr text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">농장</div>
+                                    <div class="roller-item">원산지</div>
+                                    <div class="roller-item">가지</div>
+                                </div>
+                            </div>
+                            <span>에서</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">문앞</div>
+                                    <div class="roller-item">식탁</div>
+                                    <div class="roller-item">손안</div>
+                                </div>
+                            </div>
+                            <span>까지 단</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30분</div>
+                                    <div class="roller-item">12시간</div>
+                                    <div class="roller-item">초고속</div>
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+                    <!-- Roller Text PT -->
+                    <h1
+                        class="lang-block pt text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight flex-wrap justify-center items-end gap-y-4 mb-8">
+                        <div class="flex flex-wrap justify-center items-end">
+                            <span>Da</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-from">
+                                    <div class="roller-item">Fazenda</div>
+                                    <div class="roller-item">Origem</div>
+                                    <div class="roller-item">Árvore</div>
+                                </div>
+                            </div>
+                            <span>à</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-to">
+                                    <div class="roller-item">Porta</div>
+                                    <div class="roller-item">Mesa</div>
+                                    <div class="roller-item">Mão</div>
+                                </div>
+                            </div>
+                            <span>em</span>
+                            <div class="roller-container mx-2">
+                                <div class="roller-track roller-time">
+                                    <div class="roller-item">30 Min</div>
+                                    <div class="roller-item">12 Hrs</div>
+                                    <div class="roller-item">Flash</div>
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+
+                    <div class="text-white/70 text-sm md:text-lg max-w-xl font-light leading-relaxed mb-10 mx-auto">
+                        <span class="lang-block cn">打造覆盖社区生活的数字化基础设施。<br>打破时间与空间的妥协，让鲜活触手可及。</span>
+                        <span class="lang-block tw">打造覆蓋社區生活的數字化基礎設施。<br>打破時間與空間的妥協，讓鮮活觸手可及。</span>
+                        <span class="lang-block en">Building a digital infrastructure for community life.<br>Breaking
+                            the compromise of time and space to bring freshness within reach.</span>
+                        <span class="lang-block jp">地域生活を網羅するデジタルインフラ。<br>時間と空間の妥協を打ち破り、新鮮さをすぐ手の届くところに。</span>
+                        <span class="lang-block kr">지역 사회 생활을 포괄하는 디지털 인프라.<br>시간과 공간의 타협을 깨고 신선함을 손끝으로.</span>
+                        <span class="lang-block pt">Construindo uma infraestrutura digital para a vida em
+                            comunidade.<br>Quebrando o compromisso de tempo e espaço para trazer o frescor ao seu
+                            alcance.</span>
+                    </div>
+
+                    <div class="flex gap-4 justify-center">
+                        <a href="#brand-story"
+                            class="hover-trigger bg-white text-black px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-tomato hover:text-white transition-colors">
+                            <span class="lang-text cn">了解愿景</span><span class="lang-text tw">了解願景</span><span
+                                class="lang-text en">Our Vision</span><span class="lang-text jp">ビジョン</span><span
+                                class="lang-text kr">비전</span><span class="lang-text pt">Nossa Visão</span>
+                        </a>
+                        <a href="#market"
+                            class="hover-trigger bg-transparent border border-white text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
+                            <span class="lang-text cn">探索生态</span><span class="lang-text tw">探索生態</span><span
+                                class="lang-text en">Ecosystem</span><span class="lang-text jp">エコシステム</span><span
+                                class="lang-text kr">생태계</span><span class="lang-text pt">Ecossistema</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: BRAND STORY -->
+        <div id="view-brand-story" class="page-view bg-[#07110c] text-white section-shell">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-28 space-y-10">
+                <div class="story-stack items-stretch reveal-up">
+                    <div class="editorial-card p-8 md:p-10 flex flex-col justify-between">
+                        <div>
+                            <span class="eyebrow">Brand Story</span>
+                            <h1 class="display-en text-5xl md:text-7xl font-black mt-6 mb-6">
+                                <span class="lang-text cn">时间的折叠术</span><span class="lang-text tw">時間的折疊術</span><span
+                                    class="lang-text en">Folding Time</span><span
+                                    class="lang-text jp">時間を折りたたむ</span><span class="lang-text kr">시간을 접다</span><span
+                                    class="lang-text pt">Dobrar o Tempo</span>
+                            </h1>
+                            <div class="space-y-5 text-lg text-white/74 leading-relaxed body-en">
+                                <div class="lang-block cn">
+                                    <p class="text-white text-2xl font-black leading-tight">时间的折叠术，从晨露到门前的 30 分钟</p>
+                                    <p>在钢筋水泥构筑的现代都市中，生活的齿轮总是咬合得飞快。我们在高楼大厦间穿梭，在无尽的日程表里奔忙。但在每个人的内心深处，依然保留着对一种纯粹、鲜活生活方式的向往
+                                        那是清晨带着露水的浆果，是傍晚厨房里升腾的烟火气，是人与人之间近在咫尺的社区温情。</p>
+                                    <p>然而，在快节奏的当下，“新鲜”与“便捷”似乎成了一对不可调和的矛盾。想要新鲜的食材，就得付出大把的时间去市场挑选；想要极致的便捷，就只能妥协于冰冷的工业化速食。
+                                    </p>
+                                    <p class="text-white text-xl font-bold">番达 TomaGo 的诞生，正是为了打破这种妥协。</p>
+                                    <p>我们将品牌命名为
+                                        TomaGo。Tomato（番茄），是大自然最慷慨的馈赠，它象征着阳光、雨露、泥土的芬芳，以及社区生活中最真实、最充满生机的部分。Go（即刻），则是数字时代的魔法，它代表着高效的履约、智能的调度，以及不让等待消耗热情的决断力。
+                                    </p>
+                                    <p>我们相信，科技不应该拉远人与生活的距离，反而应该成为连接田园与都市的隐形藤蔓。</p>
+                                    <p>因此，我们打造了一张覆盖整个城市的“呼吸网”： 从品类丰富的 番达市集 (TomaGo Market)，到就在你楼下转角处的 番达小店 (TomaGo
+                                        Mini)，再到星罗棋布的 合作商家。这不仅仅是一个个零售节点，它们是城市里的绿洲。当你在 TomaGo App
+                                        上按下指尖的那一刻，我们的数字化中枢便开始飞速运转，将你对生活的热爱转化为具体的指令。</p>
+                                    <p>无论是一份刚出炉的早餐，还是一颗还带着自然清香的番茄，TomaGo Express 的骑手都会在 30 到 60
+                                        分钟内，像传递接力棒一样，把这份“鲜活”准时递到你的手中。</p>
+                                    <p class="text-white text-xl font-bold">TomaGo，既是一场关于新鲜的浪漫主义复兴，也是一次极致的商业效率革命。</p>
+                                    <p>我们卖的不仅仅是商品，而是把被时间挤压的生活，原原本本地还给你。让新鲜与便利，真正触手可及。</p>
+                                    <p class="uppercase tracking-[0.28em] text-tomato font-black">Fresh. Fast.
+                                        Delivered.</p>
+                                </div>
+                                <div class="lang-block tw">
+                                    <p>番達 TomaGo
+                                        誕生於一個很直接的提問：為什麼城市越高效，生活反而越容易失去鮮活感？我們在樓宇之間奔跑，在日程裡壓縮自己，卻仍然渴望清晨帶露的水果、晚餐前剛切開的番茄，以及社區裡真正被看見的溫度。
+                                    </p>
+                                    <p>TomaGo 要做的，就是把「新鮮」與「便捷」重新放進同一個生活場景。Tomato 代表自然饋贈，Go 代表數位速度，而 30 到 60
+                                        分鐘，是把生活還給使用者的方法。</p>
+                                </div>
+                                <div class="lang-block en">
+                                    <p>TomaGo began with a simple tension: why does urban life feel less vivid precisely
+                                        when cities become more efficient? People move faster, schedules get denser, and
+                                        yet everyone still longs for dewy fruit, a just-cut tomato, and the warmth of a
+                                        neighborhood that still feels close.</p>
+                                    <p>The brand reconnects freshness with convenience. Tomato stands for natural
+                                        abundance; Go stands for digital speed. The promise of 30 to 60 minutes is not
+                                        only operational, but emotional: it gives time and texture back to daily life.
+                                    </p>
+                                </div>
+                                <div class="lang-block jp">
+                                    <p>TomaGo は、都市が効率的になるほど暮らしの鮮度が失われるのはなぜか、という問いから始まりました。</p>
+                                    <p>自然の恵みとデジタルの速さをつなぎ、30〜60分という約束を生活を取り戻す時間に変えます。</p>
+                                </div>
+                                <div class="lang-block kr">
+                                    <p>TomaGo는 도시가 더 효율적일수록 왜 삶은 덜 생생해지는가라는 질문에서 시작되었습니다.</p>
+                                    <p>자연의 풍요와 디지털 속도를 연결해 30-60분의 약속을 삶을 되돌려주는 시간으로 바꿉니다.</p>
+                                </div>
+                                <div class="lang-block pt">
+                                    <p>A TomaGo nasceu da tensao entre velocidade urbana e vida vivida com frescor.</p>
+                                    <p>Ela une a abundancia da natureza ao ritmo do digital para devolver tempo e calor
+                                        ao cotidiano.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-4 mt-10">
+                            <div class="metric-chip"><i class="fa-solid fa-stopwatch text-tomato"></i><span>30-60
+                                    min</span></div>
+                            <div class="metric-chip"><i class="fa-solid fa-leaf text-leaf"></i><span>Fresh. Fast.
+                                    Delivered.</span></div>
+                        </div>
+                    </div>
+                    <div class="page-hero-photo reveal-up"
+                        style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1800&auto=format&fit=crop');">
+                        <div class="absolute left-6 bottom-6 z-10 max-w-sm">
+                            <p class="text-xs uppercase tracking-[0.28em] text-white/60 mb-3">From Dew To Door</p>
+                            <p class="text-2xl font-black leading-tight">A neighborhood-scale retail story built around
+                                time, taste, and trust.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-grid reveal-up">
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/40 mb-3">Tomato</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Nature's Gift</h3>
+                        <p class="text-white/72 body-en"><span
+                                class="lang-text cn">象征阳光、雨露、泥土的芬芳，以及社区生活最真实的生机。</span><span
+                                class="lang-text tw">象徵陽光、雨露、泥土的芬芳，以及社區生活最真實的生機。</span><span class="lang-text en">It
+                                symbolizes sunlight, rain, soil, and the living energy of community life.</span><span
+                                class="lang-text jp">日差し、雨露、土の香り、そして地域の生命力を象徴します。</span><span class="lang-text kr">햇빛,
+                                이슬, 흙의 향기와 공동체의 생기를 상징합니다.</span><span class="lang-text pt">Simboliza sol, chuva, terra
+                                e a energia viva da comunidade.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/40 mb-3">Go</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Digital Magic</h3>
+                        <p class="text-white/72 body-en"><span
+                                class="lang-text cn">代表高效履约、智能调度和不让等待消耗热情的决断力。</span><span
+                                class="lang-text tw">代表高效履約、智慧調度與不讓等待耗損熱情的決斷力。</span><span class="lang-text en">It means
+                                efficient fulfillment, intelligent dispatching, and a refusal to let waiting drain
+                                delight.</span><span
+                                class="lang-text jp">効率的な履行、スマートな配車、そして待つことに感情を奪わせない意思です。</span><span
+                                class="lang-text kr">효율적인 이행, 스마트한 배차, 기다림에 감정을 빼앗기지 않는 결단을 뜻합니다.</span><span
+                                class="lang-text pt">Significa eficiencia operacional, despacho inteligente e decisao
+                                sem desgaste pela espera.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: COMPANY PHILOSOPHY -->
+        <div id="view-company-philosophy" class="page-view bg-[#f6f1ea] text-black">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-28 space-y-10">
+                <div class="story-stack reveal-up">
+                    <div class="page-hero-photo"
+                        style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1800&auto=format&fit=crop');">
+                    </div>
+                    <div class="light-panel p-8 md:p-10">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black">Core Philosophy</span>
+                        <h1 class="display-en text-4xl md:text-6xl font-black mt-6 mb-6">
+                            <span class="lang-text cn">用数字化重构社区零售</span><span
+                                class="lang-text tw">用數位化重構社區零售</span><span class="lang-text en">Rebuilding Community
+                                Retail Through Digital Infrastructure</span><span
+                                class="lang-text jp">デジタルで地域小売を再構築する</span><span class="lang-text kr">디지털로 커뮤니티 리테일을
+                                재구성하다</span><span class="lang-text pt">Reconstruir o varejo de bairro com digital</span>
+                        </h1>
+                        <p class="text-lg text-gray-700 body-en"><span
+                                class="lang-text cn">使命是把被时间挤压的生活原原本本还给用户；愿景是成为每个家庭和社区不可或缺的数字生活神经中枢。</span><span
+                                class="lang-text tw">使命是把被時間擠壓的生活完整還給使用者；願景是成為每個家庭與社區不可或缺的數位生活神經中樞。</span><span
+                                class="lang-text en">The mission is to return compressed time to the user; the vision is
+                                to become the digital nervous system for everyday community life.</span><span
+                                class="lang-text jp">使命は圧縮された生活時間をユーザーに返すこと。ビジョンは地域生活のデジタル神経中枢になることです。</span><span
+                                class="lang-text kr">미션은 압축된 생활 시간을 되돌려주는 것이고, 비전은 지역 생활의 디지털 신경중추가 되는 것입니다.</span><span
+                                class="lang-text pt">A missao e devolver tempo comprimido ao usuario; a visao e
+                                tornar-se o sistema nervoso digital da vida local.</span></p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 reveal-up">
+                    <div class="light-feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-gray-400 mb-3">F</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Fresh</h3>
+                        <p class="text-gray-700 body-en"><span class="lang-text cn">坚守鲜度，品质为先。</span><span
+                                class="lang-text tw">堅守鮮度，品質為先。</span><span class="lang-text en">Quality and freshness
+                                are non-negotiable.</span><span class="lang-text jp">鮮度と品質は妥協しません。</span><span
+                                class="lang-text kr">신선도와 품질은 타협하지 않습니다.</span><span class="lang-text pt">Frescor e
+                                qualidade sao inegociaveis.</span></p>
+                    </div>
+                    <div class="light-feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-gray-400 mb-3">A</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Agile</h3>
+                        <p class="text-gray-700 body-en"><span class="lang-text cn">敏捷响应，行胜于言。</span><span
+                                class="lang-text tw">敏捷回應，行勝於言。</span><span class="lang-text en">Move fast, execute
+                                clearly, and respond in real time.</span><span
+                                class="lang-text jp">素早く動き、はっきり実行する。</span><span class="lang-text kr">빠르게 움직이고 분명하게
+                                실행합니다.</span><span class="lang-text pt">Resposta agil com execucao concreta.</span></p>
+                    </div>
+                    <div class="light-feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-gray-400 mb-3">S</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Symbiosis</h3>
+                        <p class="text-gray-700 body-en"><span class="lang-text cn">开放共生，成就伙伴。</span><span
+                                class="lang-text tw">開放共生，成就夥伴。</span><span class="lang-text en">Grow with partners,
+                                merchants, and neighborhood nodes.</span><span
+                                class="lang-text jp">パートナーや地域の拠点と共に成長する。</span><span class="lang-text kr">파트너와 지역 거점과 함께
+                                성장합니다.</span><span class="lang-text pt">Crescer em conjunto com parceiros e
+                                bairros.</span></p>
+                    </div>
+                    <div class="light-feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-gray-400 mb-3">T</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Trust</h3>
+                        <p class="text-gray-700 body-en"><span class="lang-text cn">扎根社区，传递信任。</span><span
+                                class="lang-text tw">扎根社區，傳遞信任。</span><span class="lang-text en">Reliability is the
+                                foundation of neighborhood scale service.</span><span
+                                class="lang-text jp">信頼こそ地域サービスの土台です。</span><span class="lang-text kr">신뢰는 지역 서비스의
+                                토대입니다.</span><span class="lang-text pt">Confianca e a base do servico local.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: MARKET -->
+        <div id="view-market" class="page-view bg-[#0a0c10] text-white section-shell">
+            <div class="page-hero-cinematic">
+                <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2000&auto=format&fit=crop'); filter:brightness(0.35);"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0c10] via-[#0a0c10]/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(227,84,83,0.3),transparent_60%)]"></div>
+                <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-24 pt-40">
+                    <div class="reveal-up">
+                        <span class="eyebrow mb-6 inline-flex border-tomato/30 bg-tomato/10 text-tomato">TomaGo Market</span>
+                        <h1 class="text-6xl md:text-8xl font-black leading-none tracking-tight mb-8 display-en">
+                            <span class="lang-text cn">番达市集</span><span class="lang-text tw">番達市集</span><span class="lang-text en">Market</span><span class="lang-text jp">マーケット</span><span class="lang-text kr">마켓</span><span class="lang-text pt">Market</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed body-en">
+                            <span class="lang-text cn">社区生鲜与生活超市 — 品牌"新鲜"与"丰富"的展示区，城市核心履约枢纽。</span>
+                            <span class="lang-text en">Community fresh &amp; lifestyle supermarket — where assortment depth and rapid fulfillment converge.</span>
+                            <span class="lang-text tw">社區生鮮與生活超市 — 城市核心履約樞紐。</span>
+                            <span class="lang-text jp">地域生鮮・生活スーパーマーケット — 都市のコア拠点。</span>
+                            <span class="lang-text kr">지역 신선식품 슈퍼마켓 — 도시 핵심 거점.</span>
+                            <span class="lang-text pt">Supermercado comunitário — núcleo logístico urbano.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-strip">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4">
+                        <div class="py-10 px-4 text-center border-r border-white/10 reveal-up delay-100">
+                            <p class="text-4xl md:text-5xl font-black text-tomato mb-2">3<span class="text-2xl md:text-3xl text-white/50 block md:inline md:ml-1 mt-1 md:mt-0 font-normal">km</span></p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-white/40"><span class="lang-text cn">服务半径</span><span class="lang-text en">Service Radius</span><span class="lang-text tw">服務半徑</span><span class="lang-text jp">サービス半径</span></p>
+                        </div>
+                        <div class="py-10 px-4 text-center md:border-r border-white/10 reveal-up delay-200">
+                            <p class="text-4xl md:text-5xl font-black text-leaf mb-2">30<span class="text-2xl md:text-3xl text-white/50 block md:inline md:ml-1 mt-1 md:mt-0 font-normal">min</span></p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-white/40"><span class="lang-text cn">线上时效</span><span class="lang-text en">Avg. Time</span><span class="lang-text tw">線上時效</span><span class="lang-text jp">平均時間</span></p>
+                        </div>
+                        <div class="py-10 px-4 text-center border-r border-white/10 reveal-up delay-300">
+                            <p class="text-4xl md:text-5xl font-black text-white mb-2">5K<span class="text-2xl md:text-3xl text-tomato block md:inline md:ml-1 mt-1 md:mt-0 font-normal">+</span></p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-white/40"><span class="lang-text cn">精选 SKU</span><span class="lang-text en">Active SKUs</span><span class="lang-text tw">精選 SKU</span><span class="lang-text jp">取扱いSKU</span></p>
+                        </div>
+                        <div class="py-10 px-4 text-center reveal-up delay-400">
+                            <p class="text-4xl md:text-5xl font-black text-white mb-2">O2O</p>
+                            <p class="text-xs uppercase tracking-[0.2em] text-white/40"><span class="lang-text cn">店仓一体化</span><span class="lang-text en">Integration</span><span class="lang-text tw">店倉一體化</span><span class="lang-text jp">店舗統合</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal-up">
+                        <div class="image-tile shadow-2xl shadow-tomato/10" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop'); min-height: 500px;"></div>
+                    </div>
+                    <div class="space-y-10 reveal-up delay-100">
+                        <h2 class="text-3xl md:text-4xl font-black leading-tight display-en">
+                            <span class="lang-text cn">不只是超市，是城市鲜活网络的锚点</span>
+                            <span class="lang-text en">More than a store. An urban freshness anchor.</span>
+                            <span class="lang-text tw">不只是超市，是城市鮮活網絡的錨點</span>
+                            <span class="lang-text jp">単なるスーパーではなく、都市の鮮度基盤。</span>
+                            <span class="lang-text kr">단순한 마트를 넘어 도시 신선 네트워크의 닻입니다.</span>
+                            <span class="lang-text pt">Mais que um mercado, uma ancora de frescor urbano.</span>
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="contact-card-premium">
+                                <h3 class="text-xl font-bold mb-3 text-tomato"><span class="lang-text cn">店仓一体化</span><span class="lang-text en">Store-Warehouse Operations</span><span class="lang-text tw">店倉一體化</span><span class="lang-text jp">店舗・倉庫機能</span><span class="lang-text kr">매장·창고 일체화</span><span class="lang-text pt">Loja-Armazem Integrados</span></h3>
+                                <p class="text-white/60 leading-relaxed text-sm"><span class="lang-text cn">前场负责品牌体验与连带购买，后场作为隐形前置仓，3-5分钟内完成线上合单出货，实现最高坪效。</span><span class="lang-text tw">前場負責品牌體驗與連帶購買，後場作為隱形前置倉，在 3-5 分鐘內完成線上合單出貨。</span><span class="lang-text en">Front builds trust and basket size; back acts as a micro-warehouse completing digital orders in 3-5 mins.</span><span class="lang-text jp">売場が体験をつくり、バックヤードが数分で注文を出荷します。</span><span class="lang-text kr">전면은 경험을 만들고 후면은 몇 분 안에 주문을 출고합니다.</span><span class="lang-text pt">A frente constroi experiencia; o fundo conclui o pedido digital em poucos minutos.</span></p>
+                            </div>
+                            <div class="contact-card-premium">
+                                <h3 class="text-xl font-bold mb-3 text-leaf"><span class="lang-text cn">品类极致丰富</span><span class="lang-text en">Deep Assortment</span><span class="lang-text tw">品類極致豐富</span><span class="lang-text jp">究極の品揃え</span><span class="lang-text kr">깊은 상품 구성</span><span class="lang-text pt">Sortimento Profundo</span></h3>
+                                <p class="text-white/60 leading-relaxed text-sm"><span class="lang-text cn">从鲜活水产、有机蔬果到全球进口零食，全场景满足高端社区家庭的日常采买需求。</span><span class="lang-text tw">從鮮活水產、有機蔬果到全球進口零食，全場景滿足高端社區家庭的日常採買需求。</span><span class="lang-text en">From live seafood to imported snacks, fulfilling every daily need for premium communities.</span><span class="lang-text jp">鮮魚から輸入菓子まで、地域家庭の日常需要を幅広く支えます。</span><span class="lang-text kr">신선 수산물부터 수입 간식까지 지역 가정의 일상 수요를 폭넓게 채웁니다.</span><span class="lang-text pt">De frutos do mar a snacks importados, cobre a rotina completa das familias locais.</span></p>
+                            </div>
+                            <div class="contact-card-premium">
+                                <h3 class="text-xl font-bold mb-3 text-white"><span class="lang-text cn">精准选址</span><span class="lang-text en">Strategic Location</span><span class="lang-text tw">精準選址</span><span class="lang-text jp">戦略的な立地</span><span class="lang-text kr">전략 입지</span><span class="lang-text pt">Localizacao Estrategica</span></h3>
+                                <p class="text-white/60 leading-relaxed text-sm"><span class="lang-text cn">优先布局高密度中高收入住区腹地或核心商圈边缘，确保到店体验与极速配送双重引流。</span><span class="lang-text tw">優先布局高密度中高收入住區腹地或核心商圈邊緣，確保到店體驗與極速配送雙重引流。</span><span class="lang-text en">Placed near dense premium neighborhoods to ensure both foot traffic and rapid delivery appeal.</span><span class="lang-text jp">高密度住宅地や商圏の縁に配置し、来店と配送需要を同時に取ります。</span><span class="lang-text kr">고밀도 주거지와 핵심 상권 가장자리에 배치해 방문과 배송 수요를 함께 확보합니다.</span><span class="lang-text pt">Posicionado em bairros densos para combinar visita fisica com demanda imediata.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: MINI -->
+        <div id="view-mini" class="page-view bg-[#050b07] text-white section-shell">
+            <div class="page-hero-cinematic" style="min-height: 65vh;">
+                <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=2000&auto=format&fit=crop'); filter:brightness(0.35);"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050b07] via-[#050b07]/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(36,153,43,0.3),transparent_60%)]"></div>
+                <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-24 pt-40">
+                    <div class="reveal-up text-center">
+                        <span class="eyebrow mb-6 inline-flex border-leaf/30 bg-leaf/10 text-leaf">TomaGo Mini</span>
+                        <h1 class="text-6xl md:text-8xl font-black leading-none tracking-tight mb-8 display-en mx-auto">
+                            <span class="lang-text cn">番达小店</span><span class="lang-text tw">番達小店</span><span class="lang-text en">Mini</span><span class="lang-text jp">ミニ</span><span class="lang-text kr">미니</span><span class="lang-text pt">Mini</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed body-en">
+                            <span class="lang-text cn">社区微型履约中心 — 离你最近，最快完成最后 100 米响应。</span>
+                            <span class="lang-text tw">社區微型履約中心 — 離你最近，最快完成最後 100 米響應。</span>
+                            <span class="lang-text en">Micro-fulfillment hubs embedded in local blocks — fastest last 100 meters.</span>
+                            <span class="lang-text jp">最後100mのマイクロハブ。</span>
+                            <span class="lang-text kr">생활 반경 속 마지막 100미터를 책임지는 마이크로 허브입니다.</span>
+                            <span class="lang-text pt">Microhubs de bairro para o ultimo trecho da rotina local.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="domain-card reveal-up">
+                        <div class="icon-chip bg-leaf/10 mb-6"><i class="fa-solid fa-location-arrow text-leaf text-xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4"><span class="lang-text cn">高密度覆盖</span><span class="lang-text en">Hyper-Local</span><span class="lang-text tw">高密度覆蓋</span><span class="lang-text jp">高密度カバー</span><span class="lang-text kr">고밀도 커버리지</span><span class="lang-text pt">Cobertura Densa</span></h3>
+                        <p class="text-sm text-white/50 leading-relaxed"><span class="lang-text cn">步行5分钟可达，骑行2分钟履约。彻底渗透高端住区与写字楼大堂，截流即时零散需求。</span><span class="lang-text tw">步行 5 分鐘可達，騎行 2 分鐘履約，深入住區與辦公樓入口。</span><span class="lang-text en">5-min walk, 2-min bike delivery. Permeating lobbies and building floors to capture immediate needs.</span><span class="lang-text jp">徒歩5分、配達2分を目安に生活導線へ深く入ります。</span><span class="lang-text kr">도보 5분, 자전거 2분 기준으로 생활 동선 깊숙이 들어갑니다.</span><span class="lang-text pt">Ate 5 minutos a pe e 2 de bike, entrando no miolo do bairro.</span></p>
+                    </div>
+                    <div class="domain-card reveal-up delay-100">
+                        <div class="icon-chip bg-leaf/10 mb-6"><i class="fa-solid fa-user-group text-leaf text-xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4"><span class="lang-text cn">私域流量运营</span><span class="lang-text en">Private Traffic</span><span class="lang-text tw">私域運營</span><span class="lang-text jp">私域運営</span><span class="lang-text kr">프라이빗 트래픽 운영</span><span class="lang-text pt">Trafego de Comunidade</span></h3>
+                        <p class="text-sm text-white/50 leading-relaxed"><span class="lang-text cn">每一位店长都是片区生活管家，通过社群营销、团购自提，深度绑定高净值用户的复购习惯。</span><span class="lang-text tw">每一位店長都是片區生活管家，透過社群營銷、團購與自提沉澱複購。</span><span class="lang-text en">Store managers are block operators, driving retention through community chat groups and pick-up deals.</span><span class="lang-text jp">店長は地域オペレーターとして、再購入を育てます。</span><span class="lang-text kr">점장은 커뮤니티 운영자로서 재구매를 만들어냅니다.</span><span class="lang-text pt">Gerentes operam a comunidade e constroem recorrencia local.</span></p>
+                    </div>
+                    <div class="domain-card reveal-up delay-200">
+                        <div class="icon-chip bg-leaf/10 mb-6"><i class="fa-solid fa-bolt text-leaf text-xl"></i></div>
+                        <h3 class="text-2xl font-black mb-4"><span class="lang-text cn">极速响应网络</span><span class="lang-text en">Instant Response</span><span class="lang-text tw">極速響應</span><span class="lang-text jp">即応ネットワーク</span><span class="lang-text kr">즉시 대응 네트워크</span><span class="lang-text pt">Resposta Imediata</span></h3>
+                        <p class="text-sm text-white/50 leading-relaxed"><span class="lang-text cn">高精尖选品，聚焦高频刚需，用最小的占地面积实现最大的履约密度，成为前置微仓网络。</span><span class="lang-text tw">高精尖選品，聚焦高頻剛需，以最小面積實現最高履約密度。</span><span class="lang-text en">Curated inventory for high-frequency needs. Maximum fulfillment density in minimal retail footprint.</span><span class="lang-text jp">小さな面積で高頻度需要を最短で支える構成です。</span><span class="lang-text kr">작은 면적에서 높은 이행 밀도를 구현하는 구성입니다.</span><span class="lang-text pt">Sortimento curado para alta frequencia com maxima densidade operacional.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: LOCATIONS (附近门店) -->
+        <div id="view-locations" class="page-view bg-[#f6f3ed] text-slate-900 section-shell light-page">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 items-center reveal-up">
+                    <div class="paper-card p-8 md:p-12">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black mb-6">Store Network</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black display-en">
+                            <span class="lang-text cn">附近门店</span><span class="lang-text tw">附近門店</span><span class="lang-text en">Find a Location</span><span class="lang-text jp">店舗を探す</span><span class="lang-text kr">매장 찾기</span><span class="lang-text pt">Encontrar Local</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed body-en">
+                            <span class="lang-text cn">从番达市集到番达小店，TomaGo 用“看得见的门店网络”承接“看不见的履约能力”。门店不是单纯销售点，而是社区服务、即时补给与本地信任的发生地。</span>
+                            <span class="lang-text tw">從番達市集到番達小店，TomaGo 用「看得見的門店網路」承接「看不見的履約能力」。門店不是單純銷售點，而是社區服務、即時補給與本地信任的發生地。</span>
+                            <span class="lang-text en">From Market to Mini, TomaGo uses visible neighborhood stores to power invisible operational capability. Each location is a retail point, a fulfillment node, and a local trust signal at once.</span>
+                            <span class="lang-text jp">マーケットからミニまで、TomaGo の店舗網は販売だけでなく、地域補給と履行能力を同時に担います。</span>
+                            <span class="lang-text kr">마켓에서 미니까지, TomaGo의 점포망은 판매점이면서 즉시 이행 거점이자 지역 신뢰의 접점입니다.</span>
+                            <span class="lang-text pt">Da Market a Mini, a rede de lojas da TomaGo combina varejo, atendimento local e capacidade de entrega imediata.</span>
+                        </p>
+                    </div>
+                    <div class="paper-card overflow-hidden">
+                        <div class="h-[420px] bg-[url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Market Anchors</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">市集锚点</span><span class="lang-text tw">市集錨點</span><span class="lang-text en">Market Anchors</span><span class="lang-text jp">マーケット拠点</span><span class="lang-text kr">마켓 거점</span><span class="lang-text pt">Ancoras Market</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">布局在社区腹地和商圈边缘，负责品类深度、体验展示与区域订单中枢。</span><span class="lang-text tw">布局在社區腹地與商圈邊緣，負責品類深度、體驗展示與區域訂單中樞。</span><span class="lang-text en">Larger nodes for assortment depth, walk-in trust, and regional order consolidation.</span><span class="lang-text jp">品揃えと地域注文の中核を担う大型拠点です。</span><span class="lang-text kr">상품 깊이와 지역 주문을 담당하는 대형 거점입니다.</span><span class="lang-text pt">Nos maiores para sortimento e consolidacao regional de pedidos.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Mini Nodes</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">小店节点</span><span class="lang-text tw">小店節點</span><span class="lang-text en">Mini Nodes</span><span class="lang-text jp">ミニ拠点</span><span class="lang-text kr">미니 노드</span><span class="lang-text pt">Nos Mini</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">深入楼下、街角和办公区底层，承接高频补货、自提与最后 100 米响应。</span><span class="lang-text tw">深入樓下、街角與辦公區底層，承接高頻補貨、自提與最後 100 米回應。</span><span class="lang-text en">Smaller nodes embedded into the last 100 meters of everyday routines.</span><span class="lang-text jp">日常生活の最後の100メートルに入る小型拠点です。</span><span class="lang-text kr">생활 동선 마지막 100미터를 담당하는 소형 거점입니다.</span><span class="lang-text pt">Pontos menores para o ultimo trecho da rotina local.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Local Rhythm</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">本地节奏</span><span class="lang-text tw">本地節奏</span><span class="lang-text en">Local Rhythm</span><span class="lang-text jp">地域リズム</span><span class="lang-text kr">로컬 리듬</span><span class="lang-text pt">Ritmo Local</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">不同城区有不同的订单波峰、补货偏好和出行路径，门店网络因此必须具备密度与弹性。</span><span class="lang-text tw">不同城區有不同的訂單波峰、補貨偏好與出行路徑，門店網路因此必須具備密度與彈性。</span><span class="lang-text en">Every district has a different order rhythm, commute pattern, and replenishment profile.</span><span class="lang-text jp">地域ごとに需要の波と補充習慣が異なるため、店舗網にも柔軟性が必要です。</span><span class="lang-text kr">권역마다 주문 피크와 보충 습관이 달라 네트워크에도 탄력이 필요합니다.</span><span class="lang-text pt">Cada bairro tem seu proprio ritmo de pedidos e reposicao.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: EXPRESS (即时配送) -->
+        <div id="view-express-delivery" class="page-view bg-[#07111d] text-white section-shell">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.04fr_0.96fr] gap-10 items-center reveal-up">
+                    <div class="dark-card-premium p-8 md:p-12">
+                        <span class="eyebrow mb-6 inline-flex border-blue-400/20 bg-blue-400/10 text-blue-300">Express Delivery</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 display-en">
+                            <span class="lang-text cn">即时配送</span><span class="lang-text tw">即時配送</span><span class="lang-text en">Express Delivery</span><span class="lang-text jp">即時配送</span><span class="lang-text kr">빠른 배송</span><span class="lang-text pt">Entrega Expressa</span>
+                        </h1>
+                        <p class="text-lg text-white/62 leading-relaxed body-en">
+                            <span class="lang-text cn">即时配送不是一条简单的运输链，而是门店、调度系统、订单拆分和骑手网络共同协作的结果。TomaGo 追求的不是盲目更快，而是在稳定、成本与服务体验之间找到可持续的速度。</span>
+                            <span class="lang-text tw">即時配送不是一條簡單的運輸鏈，而是門店、調度系統、訂單拆分與騎手網路共同協作的結果。TomaGo 追求的不是盲目更快，而是在穩定、成本與服務體驗之間找到可持續的速度。</span>
+                            <span class="lang-text en">Express is not a simple transport layer. It is the result of stores, routing logic, order decomposition, and rider coordination working in sequence to produce sustainable speed.</span>
+                            <span class="lang-text jp">即時配送は単なる輸送ではなく、店舗・配車・注文分解・配達網の連携から生まれます。</span>
+                            <span class="lang-text kr">즉시배송은 단순 운송이 아니라 점포, 배차, 주문 분해, 라이더 네트워크가 함께 만들어내는 운영 결과입니다.</span>
+                            <span class="lang-text pt">Express nao e apenas transporte, mas a coordenacao entre lojas, despacho, fragmentacao de pedidos e rede de entregadores.</span>
+                        </p>
+                    </div>
+                    <div class="dark-card-premium overflow-hidden">
+                        <div class="h-[420px] bg-[url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">01</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">系统拆单</span><span class="lang-text tw">系統拆單</span><span class="lang-text en">Order Decomposition</span><span class="lang-text jp">注文分解</span><span class="lang-text kr">주문 분해</span><span class="lang-text pt">Desdobramento</span></h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">订单进入系统后被自动判断来源门店、出货路径和最优骑手。</span><span class="lang-text tw">訂單進入系統後會自動判斷來源門店、出貨路徑與最優騎手。</span><span class="lang-text en">The system evaluates store source, picking path, and best rider assignment in real time.</span><span class="lang-text jp">店舗・経路・最適配達員を即時に判断します。</span><span class="lang-text kr">점포, 출고 경로, 최적 라이더를 실시간으로 판단합니다.</span><span class="lang-text pt">O sistema define loja, rota e entregador mais adequado em tempo real.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">02</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">运力弹性</span><span class="lang-text tw">運力彈性</span><span class="lang-text en">Elastic Capacity</span><span class="lang-text jp">運力弾性</span><span class="lang-text kr">운력 탄성</span><span class="lang-text pt">Capacidade Elastico</span></h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">专职与灵活运力结合，在高峰、天气波动和节假日期间保持稳定履约。</span><span class="lang-text tw">專職與彈性運力結合，在高峰、天氣波動與節假日期間保持穩定履約。</span><span class="lang-text en">Dedicated and flexible rider pools stabilize delivery during peaks, holidays, and disruptions.</span><span class="lang-text jp">専任と柔軟運力を組み合わせ、変動期でも安定供給します。</span><span class="lang-text kr">전담과 유연 운력을 결합해 피크와 변수에도 안정성을 유지합니다.</span><span class="lang-text pt">Equipes fixas e flexiveis mantem estabilidade em picos e imprevistos.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">03</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">体验闭环</span><span class="lang-text tw">體驗閉環</span><span class="lang-text en">Experience Loop</span><span class="lang-text jp">体験ループ</span><span class="lang-text kr">경험 루프</span><span class="lang-text pt">Loop de Experiencia</span></h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">用户看到的是准时送达，背后则是货、单、人、路全链条的时间压缩。</span><span class="lang-text tw">用戶看到的是準時送達，背後則是貨、單、人、路全鏈條的時間壓縮。</span><span class="lang-text en">What the user experiences as punctuality is actually time compression across goods, orders, people, and routes.</span><span class="lang-text jp">利用者が感じる時間厳守の裏には、全工程の圧縮があります。</span><span class="lang-text kr">사용자가 체감하는 정시성 뒤에는 전 과정의 시간 압축이 있습니다.</span><span class="lang-text pt">A pontualidade percebida vem da compressao do tempo em toda a cadeia.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: HEADQUARTERS -->
+        <div id="view-hq-page" class="page-view bg-[#f6f2eb] text-slate-900 section-shell light-page">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 items-center reveal-up">
+                    <div class="paper-card p-8 md:p-12">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black mb-6">Headquarters</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black display-en">
+                            <span class="lang-text cn">公司总部</span><span class="lang-text tw">公司總部</span><span class="lang-text en">Headquarters</span><span class="lang-text jp">本社</span><span class="lang-text kr">본사</span><span class="lang-text pt">Sede</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed body-en">
+                            <span class="lang-text cn">集团总部是 TomaGo 的战略与控制中枢，负责把城市一线的增长诉求转化为制度、资源、标准和方法论。它不是远离业务的管理后台，而是为零售、平台、配送、技术与城市公司持续提供方向、工具和组织保障的中台引擎。</span>
+                            <span class="lang-text tw">集團總部是 TomaGo 的策略與控制中樞，負責把城市一線的增長訴求轉化為制度、資源、標準與方法論。它不是遠離業務的管理後台，而是為零售、平台、配送、技術與城市公司持續提供方向、工具與組織保障的中台引擎。</span>
+                            <span class="lang-text en">Headquarters acts as the strategic control layer of TomaGo, translating frontline growth pressure into standards, systems, resources, and operating discipline for the whole network.</span>
+                            <span class="lang-text jp">本社は戦略と統制の中枢として、現場の成長課題を制度・資源・標準へ変換します。</span>
+                            <span class="lang-text kr">본사는 전략과 통제의 중추로서 현장의 성장 과제를 제도, 자원, 기준으로 전환합니다.</span>
+                            <span class="lang-text pt">A sede funciona como centro de estrategia e controle, convertendo as necessidades da linha de frente em padroes, recursos e metodo operacional.</span>
+                        </p>
+                    </div>
+                    <div class="paper-card overflow-hidden">
+                        <div class="h-[440px] bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 reveal-up">
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Finance Center</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">财务中心</span><span class="lang-text tw">財務中心</span><span class="lang-text en">Finance</span><span class="lang-text jp">財務センター</span><span class="lang-text kr">재무 센터</span><span class="lang-text pt">Financas</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">以现金流安全和城市模型健康为底线，统筹预算、成本、审计、投融资与财务 BP，帮助各事业群算清单店、单城和区域扩张的账本。</span><span class="lang-text tw">以現金流安全和城市模型健康為底線，統籌預算、成本、審計、投融資與財務 BP，協助各事業群看清單店、單城與區域擴張帳本。</span><span class="lang-text en">Protects cash flow, budgeting, cost control, audits, and finance partnering so every store, city, and expansion plan can be measured against a sustainable model.</span><span class="lang-text jp">資金安全、予算、監査、投融資を担い、店舗・都市ごとの収支を見える化します。</span><span class="lang-text kr">현금 흐름, 예산, 원가, 감사, 투자 재무를 총괄하며 점포와 도시 단위의 수지를 명확히 합니다.</span><span class="lang-text pt">Cuida do fluxo de caixa, orcamento, custos, auditoria e apoio financeiro para loja, cidade e expansao.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">People &amp; Culture</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">人力资源中心</span><span class="lang-text tw">人力資源中心</span><span class="lang-text en">HR</span><span class="lang-text jp">人事センター</span><span class="lang-text kr">인사 센터</span><span class="lang-text pt">Recursos Humanos</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">围绕招聘、组织设计、绩效、培训和文化落地运转，用 HRBP 机制把人才供给贴近业务增长，同时坚持反官僚、重执行、敢担当的团队作风。</span><span class="lang-text tw">圍繞招聘、組織設計、績效、培訓與文化落地運轉，用 HRBP 機制讓人才供給更貼近業務增長，同時堅持反官僚、重執行、敢擔當的團隊作風。</span><span class="lang-text en">Owns recruitment, org design, performance, training, and culture execution, with HRBP support designed to stay close to business growth rather than drift into bureaucracy.</span><span class="lang-text jp">採用・組織設計・評価・研修・文化浸透を担い、事業に近い人材支援を行います。</span><span class="lang-text kr">채용, 조직 설계, 평가, 교육, 문화 실행을 맡고 HRBP 체계로 사업과 가까운 인재 지원을 만듭니다.</span><span class="lang-text pt">Conduz recrutamento, desenho organizacional, desempenho, treinamento e cultura com apoio proximo ao negocio.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Legal &amp; Brand</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">法务、品牌与支持</span><span class="lang-text tw">法務、品牌與支援</span><span class="lang-text en">Legal, Brand &amp; Support</span><span class="lang-text jp">法務・ブランド・支援</span><span class="lang-text kr">법무·브랜드·지원</span><span class="lang-text pt">Juridico, Marca e Suporte</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">法务与合规中心负责合同、食品安全、用工与知识产权风险；品牌与公共事务统一品牌表达与外部沟通；行政与运营支持中心保障办公、物资、IT 与后勤效率。</span><span class="lang-text tw">法務與合規中心負責合約、食品安全、用工與知識產權風險；品牌與公共事務統一品牌表達與外部溝通；行政與營運支援中心保障辦公、物資、IT 與後勤效率。</span><span class="lang-text en">Legal and compliance manage contracts, food safety, labor, and IP risk; brand and public affairs maintain a consistent external voice; administration and support keep offices, systems, and logistics moving.</span><span class="lang-text jp">法務・食品安全・労務・知財を守りつつ、ブランド発信と総務支援で全社の基盤を整えます。</span><span class="lang-text kr">법무·식품안전·노무·지식재산을 관리하고, 브랜드 커뮤니케이션과 행정 지원으로 전체 운영 기반을 받칩니다.</span><span class="lang-text pt">Abrange contratos, seguranca alimentar, risco trabalhista, marca, assuntos publicos e suporte administrativo de toda a empresa.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: BUSINESS GROUPS -->
+        <div id="view-business-groups-page" class="page-view bg-[#07111a] text-white section-shell">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.04fr_0.96fr] gap-10 items-center reveal-up">
+                    <div class="dark-card-premium p-8 md:p-12">
+                        <span class="eyebrow mb-6 inline-flex border-tomato/30 bg-tomato/10 text-tomato">Business Groups</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 display-en">
+                            <span class="lang-text cn">核心事业群</span><span class="lang-text tw">核心事業群</span><span class="lang-text en">Business Groups</span><span class="lang-text jp">事業群</span><span class="lang-text kr">사업군</span><span class="lang-text pt">Grupos de Negocio</span>
+                        </h1>
+                        <p class="text-lg text-white/62 leading-relaxed body-en">
+                            <span class="lang-text cn">核心事业群是 TomaGo 的增长发动机。它们分别负责零售、平台、运力、技术、供应链与商业化数据能力，把一个即时零售平台拆解成可执行、可协同、可复制的经营单元。</span>
+                            <span class="lang-text tw">核心事業群是 TomaGo 的增長引擎。它們分別負責零售、平台、運力、技術、供應鏈與商業化數據能力，把即時零售平台拆解成可執行、可協同、可複製的經營單元。</span>
+                            <span class="lang-text en">The business groups are TomaGo's operating engines, each owning a distinct layer of retail, marketplace, delivery, technology, supply, and commercialization capability.</span>
+                            <span class="lang-text jp">各事業群は、小売・プラットフォーム・配送・技術・供給・商業化を担う成長エンジンです。</span>
+                            <span class="lang-text kr">각 사업군은 리테일, 플랫폼, 배송, 기술, 공급, 수익화 역량을 맡는 성장 엔진입니다.</span>
+                            <span class="lang-text pt">Os grupos de negocio sao os motores operacionais da TomaGo, cada um responsavel por uma camada central da plataforma.</span>
+                        </p>
+                    </div>
+                    <div class="dark-card-premium overflow-hidden">
+                        <div class="h-[440px] bg-[url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 reveal-up">
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">RG</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Retail Group</h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">负责自营门店体系，包括 TomaGo Market 与 TomaGo Mini 的拓展、SOP、陈列、库存、拣货与门店经营效率，是品牌体验和履约基础设施的第一现场。</span><span class="lang-text tw">負責自營門店體系，包括 TomaGo Market 與 TomaGo Mini 的拓展、SOP、陳列、庫存、揀貨與門店經營效率，是品牌體驗與履約基礎設施的第一現場。</span><span class="lang-text en">Owns self-operated stores, expansion, store SOPs, merchandising, inventory, picking, and the frontline retail experience.</span><span class="lang-text jp">自営店網の拡張、標準化、陳列、在庫、ピッキングを担います。</span><span class="lang-text kr">직영점 확장, 운영 표준, 진열, 재고, 피킹을 담당합니다.</span><span class="lang-text pt">Cuida das lojas proprias, expansao, padronizacao, sortimento, estoque e picking.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">MPG &amp; EXG</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">平台与即时配送</span><span class="lang-text tw">平台與即時配送</span><span class="lang-text en">Marketplace &amp; Express</span><span class="lang-text jp">プラットフォームと配送</span><span class="lang-text kr">플랫폼과 배송</span><span class="lang-text pt">Marketplace e Express</span></h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">平台生态事业群负责商家网络、入驻和商家运营；即时配送事业群负责骑手网络、调度效率、激励与安全，在商家供给和履约时效之间建立稳定闭环。</span><span class="lang-text tw">平台生態事業群負責商家網路、入駐與商家營運；即時配送事業群負責騎手網路、調度效率、激勵與安全，在商家供給與履約時效之間建立穩定閉環。</span><span class="lang-text en">Marketplace builds and manages the merchant base while Express runs rider capacity, dispatch quality, incentives, and delivery reliability.</span><span class="lang-text jp">加盟店ネットワークと配達網をそれぞれ運営し、供給と履行を接続します。</span><span class="lang-text kr">입점 상인 네트워크와 라이더 네트워크를 운영해 공급과 이행을 연결합니다.</span><span class="lang-text pt">Marketplace organiza a rede de comerciantes; Express garante despachos, entregadores e confiabilidade operacional.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">TG</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Technology Group</h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">技术平台事业群坚持 MVP 先行，围绕用户端、商家端、门店系统、调度算法与数据平台做快速迭代，优先解决真实场景中的效率痛点。</span><span class="lang-text tw">技術平台事業群堅持 MVP 先行，圍繞用戶端、商家端、門店系統、調度演算法與數據平台做快速迭代，優先解決真實場景中的效率痛點。</span><span class="lang-text en">Technology ships practical systems across consumer, merchant, store, dispatch, and data layers with an MVP-first mindset.</span><span class="lang-text jp">ユーザー・店舗・商家・配車・データ領域を MVP 起点で素早く改善します。</span><span class="lang-text kr">사용자, 상점, 상인, 배차, 데이터 시스템을 MVP 방식으로 빠르게 개선합니다.</span><span class="lang-text pt">Tecnologia evolui app, sistemas de loja, merchant tools, despacho e dados com mentalidade MVP.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">SCG</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Supply Chain Group</h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">负责采购、供应商协同、仓配衔接和商品结构优化，保障门店与平台商家拥有稳定、低损耗、可规模化的商品供给，并为自有品牌打基础。</span><span class="lang-text tw">負責採購、供應商協同、倉配銜接與商品結構優化，保障門店與平台商家擁有穩定、低損耗、可規模化的商品供給，並為自有品牌打基礎。</span><span class="lang-text en">Owns sourcing, supplier coordination, warehouse-to-store replenishment, and assortment structure, while laying groundwork for private label development.</span><span class="lang-text jp">調達、サプライヤー連携、補充と商品構成を担い、自社ブランド基盤も整えます。</span><span class="lang-text kr">조달, 공급업체 협업, 보충 체계, 상품 구조 최적화를 담당하며 자체 브랜드 기반도 만듭니다.</span><span class="lang-text pt">Cuida de compras, fornecedores, reposicao e estrutura de mix, alem de preparar a base para marca propria.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">ADG</p>
+                        <h3 class="text-2xl font-black mb-3 display-en">Advertising &amp; Data</h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">广告与数据事业群沉淀 BI 能力、商家营销工具和商业化产品，为品牌商家提供数据洞察与精准增长能力，也为平台未来收入结构做铺垫。</span><span class="lang-text tw">廣告與數據事業群沉澱 BI 能力、商家行銷工具與商業化產品，為品牌商家提供數據洞察與精準增長能力，也為平台未來收入結構做鋪墊。</span><span class="lang-text en">Builds BI, merchant marketing tools, and commercialization products that help brands grow while creating future platform revenue lines.</span><span class="lang-text jp">BI・販促ツール・商業化商品の整備を通じて、加盟店成長と将来収益を支えます。</span><span class="lang-text kr">BI, 마케팅 도구, 수익화 제품을 구축해 상인 성장과 플랫폼 미래 수익을 함께 만듭니다.</span><span class="lang-text pt">Constroi BI, ferramentas de marketing e produtos de monetizacao para apoiar marcas e novas receitas da plataforma.</span></p>
+                    </div>
+                    <div class="feature-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">Operating Model</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">协同方式</span><span class="lang-text tw">協同方式</span><span class="lang-text en">How They Work Together</span><span class="lang-text jp">協働モデル</span><span class="lang-text kr">협업 방식</span><span class="lang-text pt">Modelo de Integracao</span></h3>
+                        <p class="text-white/62 body-en"><span class="lang-text cn">各事业群既各自负责结果，也通过总部和城市公司形成协同接口，让商品、门店、商家、骑手、技术和数据在同一套节奏中运转。</span><span class="lang-text tw">各事業群既各自負責結果，也透過總部與城市公司形成協同接口，讓商品、門店、商家、騎手、技術與數據在同一套節奏中運轉。</span><span class="lang-text en">Each group owns outcomes, but coordination with headquarters and city companies keeps products, stores, merchants, riders, systems, and data aligned to one operating cadence.</span><span class="lang-text jp">各事業群は独立採算を持ちながら、本社と都市会社を介して同じ運営テンポで連動します。</span><span class="lang-text kr">각 사업군은 독립 책임을 가지되 본사와 도시회사 인터페이스를 통해 하나의 운영 리듬으로 연결됩니다.</span><span class="lang-text pt">Cada grupo tem sua responsabilidade, mas todos se conectam por meio da sede e das cidades numa mesma cadencia operacional.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: OPERATIONS CENTER -->
+        <div id="view-ops-center-page" class="page-view bg-[#f5f7fb] text-slate-900 section-shell light-page">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.98fr_1.02fr] gap-10 items-center reveal-up">
+                    <div class="paper-card overflow-hidden">
+                        <div class="h-[440px] bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                    <div class="paper-card p-8 md:p-12">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black mb-6">City Operations</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black display-en">
+                            <span class="lang-text cn">城市运营</span><span class="lang-text tw">城市運營</span><span class="lang-text en">City Operations</span><span class="lang-text jp">都市運営</span><span class="lang-text kr">도시 운영</span><span class="lang-text pt">Operacoes Urbanas</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed body-en">
+                            <span class="lang-text cn">城市运营的目标，是打透本地市场、守住履约效率、算平单城账本。它负责把总部与事业群的战略落到每一座城市的街区、仓点、骑手站点和地推网络，确保增长不是空转，而是能在本地跑通。</span>
+                            <span class="lang-text tw">城市運營的目標，是打透本地市場、守住履約效率、算平單城帳本。它負責把總部與事業群的戰略落到每一座城市的街區、倉點、騎手站點與地推網路，確保增長不是空轉，而是能在本地跑通。</span>
+                            <span class="lang-text en">City operations exist to win the local market, protect delivery performance, and make the economics of each city work in practice.</span>
+                            <span class="lang-text jp">都市運営は、地域市場を取り切り、履行効率を守り、都市単位の収支を成立させるための実行レイヤーです。</span>
+                            <span class="lang-text kr">도시 운영은 지역 시장을 뚫고 이행 효율을 지키며 도시 단위 손익을 실제로 성립시키는 실행 계층입니다.</span>
+                            <span class="lang-text pt">Operacoes urbanas existem para vencer o mercado local, proteger a eficiencia da entrega e equilibrar a conta economica de cada cidade.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 reveal-up">
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Regional Center</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">大区运营中心</span><span class="lang-text tw">大區運營中心</span><span class="lang-text en">Regional Ops</span><span class="lang-text jp">広域運営</span><span class="lang-text kr">권역 운영</span><span class="lang-text pt">Centro Regional</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">负责区域开城节奏、RDC 协同、跨城运力与物资调拨，并通过赛马机制拉动城市之间的复制和优化。</span><span class="lang-text tw">負責區域開城節奏、RDC 協同、跨城運力與物資調撥，並透過賽馬機制拉動城市之間的複製與優化。</span><span class="lang-text en">Coordinates launch sequencing, RDC planning, cross-city rider and material reallocation, and benchmark mechanisms across cities.</span><span class="lang-text jp">出店順序、広域配送拠点、都市間融通、比較改善を担います。</span><span class="lang-text kr">개도시 순서, RDC 협업, 도시 간 운력·물자 조정, 벤치마크 체계를 담당합니다.</span><span class="lang-text pt">Coordena ritmo de expansao, RDC, deslocamento entre cidades e comparativos de performance.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">City Company</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">城市公司</span><span class="lang-text tw">城市公司</span><span class="lang-text en">City Company</span><span class="lang-text jp">都市会社</span><span class="lang-text kr">도시 회사</span><span class="lang-text pt">Empresa da Cidade</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">城市总经理对日订单量、履约 SLA 与本地损益直接负责，是把总部要求转化为城市经营结果的第一责任单位。</span><span class="lang-text tw">城市總經理對日訂單量、履約 SLA 與本地損益直接負責，是把總部要求轉化為城市經營結果的第一責任單位。</span><span class="lang-text en">The city GM owns daily order volume, SLA, and local P&amp;L, making the city company the core unit of execution and accountability.</span><span class="lang-text jp">都市 GM が日次注文、SLA、地域損益に責任を持つ実行単位です。</span><span class="lang-text kr">도시 총경리가 일 주문량, SLA, 현지 손익을 직접 책임지는 실행 단위입니다.</span><span class="lang-text pt">O gerente geral da cidade responde por volume diario, SLA e resultado local.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Execution Units</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">履约执行单元</span><span class="lang-text tw">履約執行單元</span><span class="lang-text en">Execution Units</span><span class="lang-text jp">実行部門</span><span class="lang-text kr">실행 부문</span><span class="lang-text pt">Unidades de Execucao</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">前置仓运营部负责仓点选址、动线、库存与损耗；城市运力配送部负责站点、运力池与异常调度，把配送效率稳在城市尺度上。</span><span class="lang-text tw">前置倉營運部負責倉點選址、動線、庫存與損耗；城市運力配送部負責站點、運力池與異常調度，把配送效率穩在城市尺度上。</span><span class="lang-text en">Dark store ops manage site grids, in-warehouse design, stock, and loss; city delivery ops manage rider pools, micro-stations, and exception handling.</span><span class="lang-text jp">前置倉と配達部門が、在庫・導線・拠点・異常対応を担います。</span><span class="lang-text kr">전치창 운영과 도시 배송 부문이 재고, 동선, 거점, 예외 처리를 맡습니다.</span><span class="lang-text pt">Operacao de dark store e entrega urbana cuidam de estoque, estacoes, frota e excecoes.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <p class="text-xs uppercase tracking-[0.28em] text-slate-400 mb-4">Local Growth</p>
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">本地商务与用户运营</span><span class="lang-text tw">本地商務與用戶營運</span><span class="lang-text en">Local BD &amp; User Ops</span><span class="lang-text jp">現地営業とユーザー運営</span><span class="lang-text kr">로컬 영업과 유저 운영</span><span class="lang-text pt">BD e Usuario Local</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">本地商务与地推部负责网格化拓店和商家生命周期管理；本地市场与用户运营负责社群、地推活动和城市化营销，让增长真正扎根社区。</span><span class="lang-text tw">本地商務與地推部負責網格化拓店與商家生命週期管理；本地市場與用戶營運負責社群、地推活動與城市化行銷，讓增長真正扎根社區。</span><span class="lang-text en">Local BD grows merchant coverage while local marketing and user operations drive community traffic, campaigns, and repeat behavior on the ground.</span><span class="lang-text jp">営業開拓と地域マーケティングが、加盟店密度とユーザー定着を同時に押し上げます。</span><span class="lang-text kr">현지 영업 개척과 지역 마케팅이 상인 밀도와 사용자 정착을 함께 끌어올립니다.</span><span class="lang-text pt">Expansao comercial local e operacao de usuarios impulsionam cobertura, campanhas e recorrencia no territorio.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ======================= 服务合作 (Partner) ======================= -->
+
+        <!-- [VIEW]: MERCHANT ENTRY -->
+        <div id="view-merchant-entry" class="page-view bg-[#fbfaf7] text-slate-900 section-shell light-page">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] gap-10 items-center reveal-up">
+                    <div class="paper-card p-8 md:p-12">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black mb-6">Partner With Us</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black display-en">
+                            <span class="lang-text cn">商家入驻</span><span class="lang-text tw">商家入駐</span><span class="lang-text en">Partner with Us</span><span class="lang-text jp">パートナー募集</span><span class="lang-text kr">파트너 제휴</span><span class="lang-text pt">Seja Parceiro</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed body-en">
+                            <span class="lang-text cn">TomaGo 面向优质零售门店、社区品牌和本地生活服务商开放标准化入驻路径。我们关注的不只是商品上架，更是门店模型、供给质量、履约适配与长期用户口碑。</span>
+                            <span class="lang-text tw">TomaGo 面向優質零售門店、社區品牌與本地生活服務商開放標準化入駐路徑。我們關注的不只是商品上架，更是門店模型、供給品質、履約適配與長期用戶口碑。</span>
+                            <span class="lang-text en">TomaGo offers a structured onboarding path for quality retailers, neighborhood brands, and local service businesses. We evaluate not only product fit, but operating model, fulfillment compatibility, and long-term user trust.</span>
+                            <span class="lang-text jp">TomaGo は地域小売・ローカルブランド向けに標準化された加盟導線を用意しています。</span>
+                            <span class="lang-text kr">TomaGo는 우수 소매점과 로컬 브랜드를 위한 표준화된 입점 경로를 제공합니다.</span>
+                            <span class="lang-text pt">A TomaGo oferece uma jornada estruturada de entrada para varejistas e marcas locais de qualidade.</span>
+                        </p>
+                    </div>
+                    <div class="paper-card overflow-hidden">
+                        <div class="h-[420px] bg-[url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">准入标准</span><span class="lang-text tw">準入標準</span><span class="lang-text en">Fit Criteria</span><span class="lang-text jp">加盟基準</span><span class="lang-text kr">입점 기준</span><span class="lang-text pt">Criterios</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">优先欢迎商品力强、复购高、供给稳定、用户评价好的商家。</span><span class="lang-text tw">優先歡迎商品力強、複購高、供給穩定、用戶評價好的商家。</span><span class="lang-text en">We prioritize strong assortment, stable supply, and high repeat-purchase potential.</span><span class="lang-text jp">供給の安定性と再購入性を重視します。</span><span class="lang-text kr">공급 안정성과 재구매 가능성을 중시합니다.</span><span class="lang-text pt">Priorizamos sortimento forte, oferta estavel e recompra.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">上线流程</span><span class="lang-text tw">上線流程</span><span class="lang-text en">Go-Live Flow</span><span class="lang-text jp">立上线フロー</span><span class="lang-text kr">오픈 절차</span><span class="lang-text pt">Fluxo de Lancamento</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">从资料审核、合同确认到商品接入和运营准备，流程清晰且可复制。</span><span class="lang-text tw">從資料審核、合約確認到商品接入與營運準備，流程清晰且可複製。</span><span class="lang-text en">Qualification, commercial review, system setup, and launch preparation are handled in a structured sequence.</span><span class="lang-text jp">審査から接続、運営準備まで段階的に進みます。</span><span class="lang-text kr">심사, 연동, 운영 준비가 단계적으로 진행됩니다.</span><span class="lang-text pt">Triagem, revisao comercial, integracao e preparacao seguem uma sequencia clara.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">长期协同</span><span class="lang-text tw">長期協同</span><span class="lang-text en">Long-Term Growth</span><span class="lang-text jp">長期協働</span><span class="lang-text kr">장기 협업</span><span class="lang-text pt">Crescimento Continuo</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">我们更看重长期关系，而不是一次性入驻，因此会围绕履约、营销和复购持续优化。</span><span class="lang-text tw">我們更看重長期關係，而不是一次性入駐，因此會圍繞履約、營銷與複購持續優化。</span><span class="lang-text en">The goal is not one-time onboarding, but sustained growth through operations, fulfillment, and retention.</span><span class="lang-text jp">単発契約ではなく継続的な成長を目指します。</span><span class="lang-text kr">일회성 입점보다 지속 성장 관계를 지향합니다.</span><span class="lang-text pt">Buscamos crescimento continuo, e nao apenas adesao pontual.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: RIDER JOIN -->
+        <div id="view-rider-join" class="page-view bg-[#eef2f7] text-slate-900 section-shell light-page">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.96fr_1.04fr] gap-10 items-center reveal-up">
+                    <div class="paper-card overflow-hidden">
+                        <div class="h-[460px] bg-[url('https://images.unsplash.com/photo-1549603507-68b6bceba589?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                    <div class="paper-card p-8 md:p-12">
+                        <span class="eyebrow !border-black/10 !bg-black/5 !text-black mb-6">TomaGo Riders</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black display-en">
+                            <span class="lang-text cn">成为骑手</span><span class="lang-text tw">成為騎手</span><span class="lang-text en">Become a Rider</span><span class="lang-text jp">配達員になる</span><span class="lang-text kr">라이더 지원</span><span class="lang-text pt">Seja um Entregador</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed body-en">
+                            <span class="lang-text cn">骑手不仅是运输角色，更是城市即时履约网络中最靠近用户的服务触点。TomaGo 希望建立一支稳定、可成长、重视安全与服务质量的骑手体系。</span>
+                            <span class="lang-text tw">騎手不僅是運輸角色，更是城市即時履約網路中最靠近使用者的服務觸點。TomaGo 希望建立一支穩定、可成長、重視安全與服務品質的騎手體系。</span>
+                            <span class="lang-text en">Riders are more than couriers. They are the final human touchpoint of the instant retail system, which is why TomaGo focuses on safety, consistency, service discipline, and room to grow.</span>
+                            <span class="lang-text jp">配達員は単なる運送役ではなく、利用者に最も近いサービス接点です。</span>
+                            <span class="lang-text kr">라이더는 단순한 운송 인력이 아니라 사용자와 가장 가까운 서비스 접점입니다.</span>
+                            <span class="lang-text pt">Entregadores sao o ponto humano final do sistema de varejo imediato.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">入职路径</span><span class="lang-text tw">入職路徑</span><span class="lang-text en">Entry Path</span><span class="lang-text jp">参加導線</span><span class="lang-text kr">입직 경로</span><span class="lang-text pt">Caminho de Entrada</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">认证、培训、设备准备与站点分配形成清晰的上岗流程。</span><span class="lang-text tw">認證、培訓、設備準備與站點分配形成清晰的上崗流程。</span><span class="lang-text en">Verification, training, equipment readiness, and site assignment follow one streamlined process.</span><span class="lang-text jp">認証・研修・拠点配置まで明確な流れがあります。</span><span class="lang-text kr">인증, 교육, 장비 준비, 거점 배치가 하나의 절차로 이어집니다.</span><span class="lang-text pt">Verificacao, treinamento e alocacao seguem um fluxo claro.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">服务要求</span><span class="lang-text tw">服務要求</span><span class="lang-text en">Service Standards</span><span class="lang-text jp">服務基準</span><span class="lang-text kr">서비스 기준</span><span class="lang-text pt">Padroes</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">准时、礼貌、安全与路线纪律共同组成骑手体验的核心标准。</span><span class="lang-text tw">準時、禮貌、安全與路線紀律共同構成騎手體驗的核心標準。</span><span class="lang-text en">Punctuality, courtesy, route discipline, and safety form the operating baseline.</span><span class="lang-text jp">時間厳守、礼儀、安全が基本基準です。</span><span class="lang-text kr">정시성, 응대 태도, 안전이 기본 기준입니다.</span><span class="lang-text pt">Pontualidade, cortesia e seguranca sao a base.</span></p>
+                    </div>
+                    <div class="light-stat-card">
+                        <h3 class="text-2xl font-black mb-3 display-en"><span class="lang-text cn">成长空间</span><span class="lang-text tw">成長空間</span><span class="lang-text en">Growth Path</span><span class="lang-text jp">成長機会</span><span class="lang-text kr">성장 기회</span><span class="lang-text pt">Evolucao</span></h3>
+                        <p class="text-slate-600 body-en"><span class="lang-text cn">优秀骑手可成长为站点骨干、培训协助和区域运营支持角色。</span><span class="lang-text tw">優秀騎手可成長為站點骨幹、培訓協助與區域營運支援角色。</span><span class="lang-text en">High-performing riders can move into station leadership, training support, or operational coordination.</span><span class="lang-text jp">優秀人材は拠点運営や研修支援にも進めます。</span><span class="lang-text kr">우수 인력은 거점 운영과 교육 지원으로 성장할 수 있습니다.</span><span class="lang-text pt">Entregadores de destaque podem evoluir para lideranca e suporte operacional.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- [VIEW]: MERCHANT COOPERATION -->
+        <div id="view-merchant-cooperation" class="page-view bg-[#06101c] text-white section-shell">
+            <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-24 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-[1.04fr_0.96fr] gap-10 items-center reveal-up">
+                    <div class="dark-card-premium p-8 md:p-12">
+                        <span class="eyebrow mb-6">Business Cooperation</span>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 display-en">
+                            <span class="lang-text cn">商务合作</span><span class="lang-text tw">商務合作</span><span class="lang-text en">Business Cooperation</span><span class="lang-text jp">ビジネス連携</span><span class="lang-text kr">비즈니스 협력</span><span class="lang-text pt">Cooperacao Comercial</span>
+                        </h1>
+                        <p class="text-lg text-white/62 leading-relaxed body-en">
+                            <span class="lang-text cn">如果你希望围绕门店生态、技术开放、资金财务、法务合规、招聘培训或城市扩张展开系统合作，这里是 TomaGo 的统一协作入口。我们按职能划分窗口，帮助合作快速进入执行。</span>
+                            <span class="lang-text tw">如果你希望圍繞門店生態、技術開放、資金財務、法務合規、招聘培訓或城市擴張展開系統合作，這裡是 TomaGo 的統一協作入口。我們按職能劃分窗口，幫助合作快速進入執行。</span>
+                            <span class="lang-text en">This is TomaGo's central cooperation gateway for store ecosystem, technology, finance, compliance, training, and regional expansion. Each function has a direct contact window so conversations can move quickly into execution.</span>
+                            <span class="lang-text jp">店舗生態、技術、財務、法務、人材、地域拡張の協力を一元的に受け付ける窓口です。</span>
+                            <span class="lang-text kr">매장 생태, 기술, 재무, 준법, 채용, 권역 확장을 위한 통합 협력 창구입니다.</span>
+                            <span class="lang-text pt">Este e o ponto central de cooperacao para ecossistema de lojas, tecnologia, financas, conformidade e expansao regional.</span>
+                        </p>
+                    </div>
+                    <div class="dark-card-premium overflow-hidden">
+                        <div class="h-[430px] bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 reveal-up">
+                    <div class="contact-card-premium">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">Finance</p>
+                        <h3 class="text-xl font-black mb-2">董女士</h3>
+                        <p class="text-white/58 body-en mb-5"><span class="lang-text cn">资金与财务服务合作。</span><span class="lang-text tw">資金與財務服務合作。</span><span class="lang-text en">Funding and finance service cooperation.</span><span class="lang-text jp">資金・財務サービス連携。</span><span class="lang-text kr">자금 및 재무 서비스 협력.</span><span class="lang-text pt">Cooperacao financeira.</span></p>
+                        <a href="mailto:1298366026@qq.com" class="contact-mail">1298366026@qq.com</a>
+                    </div>
+                    <div class="contact-card-premium">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">Legal &amp; Training</p>
+                        <h3 class="text-xl font-black mb-2">彭女士</h3>
+                        <p class="text-white/58 body-en mb-5"><span class="lang-text cn">法务合规服务合作；人才招聘与培训合作。</span><span class="lang-text tw">法務合規服務合作；人才招聘與培訓合作。</span><span class="lang-text en">Legal compliance, recruitment, and training cooperation.</span><span class="lang-text jp">法務・コンプライアンスおよび採用研修連携。</span><span class="lang-text kr">법무 준법 및 채용 교육 협력.</span><span class="lang-text pt">Conformidade juridica e treinamento.</span></p>
+                        <a href="mailto:3513736481@qq.com" class="contact-mail">3513736481@qq.com</a>
+                    </div>
+                    <div class="contact-card-premium">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">City Expansion</p>
+                        <h3 class="text-xl font-black mb-2">焦女士</h3>
+                        <p class="text-white/58 body-en mb-5"><span class="lang-text cn">城市与区域拓展运营合作。</span><span class="lang-text tw">城市與區域拓展營運合作。</span><span class="lang-text en">City and regional expansion operations.</span><span class="lang-text jp">都市・エリア拡張運営。</span><span class="lang-text kr">도시 및 권역 확장 운영.</span><span class="lang-text pt">Expansao urbana e regional.</span></p>
+                        <a href="mailto:2738462884@qq.com" class="contact-mail">2738462884@qq.com</a>
+                    </div>
+                    <div class="contact-card-premium">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">Store Ecosystem</p>
+                        <h3 class="text-xl font-black mb-2">李女士</h3>
+                        <p class="text-white/58 body-en mb-5"><span class="lang-text cn">线下门店生态合作；商家入驻生态合作。</span><span class="lang-text tw">線下門店生態合作；商家入駐生態合作。</span><span class="lang-text en">Offline store ecosystem and merchant onboarding cooperation.</span><span class="lang-text jp">実店舗エコシステムと加盟協力。</span><span class="lang-text kr">오프라인 매장 생태 및 상인 입점 협력.</span><span class="lang-text pt">Ecossistema de lojas e entrada de comerciantes.</span></p>
+                        <a href="mailto:1507292570@qq.com" class="contact-mail">1507292570@qq.com</a>
+                    </div>
+                    <div class="contact-card-premium md:col-span-2 xl:col-span-2">
+                        <p class="text-xs uppercase tracking-[0.28em] text-white/35 mb-3">Technology</p>
+                        <h3 class="text-xl font-black mb-2">谭先生</h3>
+                        <p class="text-white/58 body-en mb-5"><span class="lang-text cn">技术开放与生态合作，适合 API 接入、系统协同、平台能力开放与数字化共建。</span><span class="lang-text tw">技術開放與生態合作，適合 API 接入、系統協同、平台能力開放與數位化共建。</span><span class="lang-text en">Technical openness and ecosystem cooperation for APIs, system integration, platform capability access, and digital co-building.</span><span class="lang-text jp">API 連携、システム協調、能力開放など技術協業を担当します。</span><span class="lang-text kr">API 연동, 시스템 협업, 플랫폼 기능 개방 등 기술 협력을 담당합니다.</span><span class="lang-text pt">Abertura tecnica e cooperacao de ecossistema para APIs e integracoes.</span></p>
+                        <a href="mailto:woxiantao@iCloud.com" class="contact-mail">woxiantao@iCloud.com</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+<!-- [VIEW]: PROFILE (个人中心) -->
+        <div id="view-profile" class="page-view bg-gray-50 text-black min-h-screen pb-24">
+            <header class="h-[30vh] bg-black relative flex items-center justify-center overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
+            </header>
+            <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-4 gap-8 -mt-20 relative z-10">
+
+                <!-- 侧边栏 -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 mb-6 flex flex-col items-center text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-tomato/20 to-transparent">
+                        </div>
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=TomaGoer&backgroundColor=E35453"
+                            class="w-24 h-24 rounded-full bg-tomato shadow-xl mb-4 relative z-10 border-4 border-white">
+                        <h2 class="text-xl font-black mb-1 relative z-10">TomaGoer</h2>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest relative z-10">ID: TM-9827361</p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+                        <a href="#"
+                            class="flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 font-bold text-gray-500"><i
+                                data-lucide="package" class="w-5 h-5"></i> <span class="lang-text cn">我的订单</span><span
+                                class="lang-text en">My Orders</span><span class="lang-text tw">我的訂單</span><span
+                                class="lang-text jp">注文履歴</span><span class="lang-text kr">내 주문</span><span
+                                class="lang-text pt">Meus Pedidos</span></a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-4 bg-gray-50 transition-colors border-b border-gray-100 font-bold text-tomato"><i
+                                data-lucide="map-pin" class="w-5 h-5"></i> <span class="lang-text cn">地址管理</span><span
+                                class="lang-text en">Addresses</span><span class="lang-text tw">地址管理</span><span
+                                class="lang-text jp">住所管理</span><span class="lang-text kr">주소 관리</span><span
+                                class="lang-text pt">Endereços</span></a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 font-bold text-gray-500"><i
+                                data-lucide="wallet" class="w-5 h-5"></i> <span class="lang-text cn">钱包与卡券</span><span
+                                class="lang-text en">Wallet</span><span class="lang-text tw">錢包與卡券</span><span
+                                class="lang-text jp">ウォレット</span><span class="lang-text kr">지갑</span><span
+                                class="lang-text pt">Carteira</span></a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors font-bold text-gray-500"><i
+                                data-lucide="settings" class="w-5 h-5"></i> <span class="lang-text cn">账号设置</span><span
+                                class="lang-text en">Settings</span><span class="lang-text tw">賬號設置</span><span
+                                class="lang-text jp">設定</span><span class="lang-text kr">설정</span><span
+                                class="lang-text pt">Configurações</span></a>
+                    </div>
+
+                    <button onclick="logout()"
+                        class="w-full mt-6 flex items-center justify-center gap-2 p-4 text-gray-400 font-bold hover:text-red-500 hover:bg-red-50 rounded-2xl transition-colors hover-trigger">
+                        <i data-lucide="log-out" class="w-4 h-4"></i> <span class="lang-text cn">退出登录</span><span
+                            class="lang-text en">Sign Out</span><span class="lang-text tw">退出登入</span><span
+                            class="lang-text jp">ログアウト</span><span class="lang-text kr">로그아웃</span><span
+                            class="lang-text pt">Sair</span>
+                    </button>
+                </div>
+
+                <!-- 主内容区 -->
+                <div class="lg:col-span-3 space-y-8">
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-2xl font-black mb-6">
+                            <span class="lang-text cn">默认配送地址</span><span class="lang-text en">Default
+                                Address</span><span class="lang-text tw">默認配送地址</span><span
+                                class="lang-text jp">デフォルト配送先</span><span class="lang-text kr">기본 배송지</span><span
+                                class="lang-text pt">Endereço Padrão</span>
+                        </h3>
+                        <div class="border border-tomato/30 bg-tomato/5 rounded-2xl p-6 relative">
+                            <span
+                                class="absolute top-6 right-6 text-xs font-bold text-tomato bg-white px-2 py-1 rounded-md shadow-sm border border-tomato/20">Default</span>
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1"><i data-lucide="map-pin" class="text-tomato"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg mb-1">TomaGoer <span
+                                            class="text-gray-400 text-sm font-normal ml-2">+1 555-0198</span></p>
+                                    <p class="text-gray-600">123 Maple Street</p>
+                                    <p class="text-gray-600">Los Angeles, CA 90001</p>
+                                    <p class="text-gray-600">United States</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-gray-200 flex gap-4">
+                                <button
+                                    class="text-sm font-bold text-gray-500 hover:text-black hover-trigger">Edit</button>
+                                <button
+                                    class="text-sm font-bold text-gray-500 hover:text-red-500 hover-trigger">Delete</button>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-6 w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 font-bold hover:border-black hover:text-black transition-colors hover-trigger flex items-center justify-center gap-2">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                            <span class="lang-text cn">添加新地址</span><span class="lang-text en">Add New
+                                Address</span><span class="lang-text tw">添加新地址</span><span
+                                class="lang-text jp">新しい住所を追加</span><span class="lang-text kr">새 주소 추가</span><span
+                                class="lang-text pt">Adicionar Novo Endereço</span>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                            <h3 class="text-lg font-bold mb-4"><span class="lang-text cn">近期订单</span><span
+                                    class="lang-text en">Recent Orders</span><span class="lang-text tw">近期訂單</span></h3>
+                            <div class="flex items-center gap-4 py-4 border-b border-gray-100 hover-trigger group">
+                                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"><i
+                                        data-lucide="shopping-bag" class="text-gray-400 group-hover:text-black"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm">Tomato &amp; Eggs Grocery</p>
+                                    <p class="text-xs text-gray-400">Delivered • Oct 14, 2025</p>
+                                </div>
+                                <div class="text-sm font-bold">$12.50</div>
+                            </div>
+                            <div class="flex items-center gap-4 py-4 hover-trigger group">
+                                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"><i
+                                        data-lucide="coffee" class="text-gray-400 group-hover:text-black"></i></div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm">Morning Coffee &amp; Pastry</p>
+                                    <p class="text-xs text-gray-400">Delivered • Oct 10, 2025</p>
+                                </div>
+                                <div class="text-sm font-bold">$8.90</div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 shadow-xl text-white relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-tomato/20 blur-2xl"></div>
+                            <h3 class="text-lg font-bold mb-8 text-white/70"><span class="lang-text cn">账户余额</span><span
+                                    class="lang-text en">Wallet Balance</span><span class="lang-text tw">賬戶餘額</span>
+                            </h3>
+                            <div class="text-4xl font-black mb-2"><span id="profile-currency">$</span> 120.50</div>
+                            <p class="text-xs text-white/50 mb-8">2 Coupons available</p>
+                            <button
+                                class="bg-white text-black text-sm font-bold px-6 py-2 rounded-full hover-trigger hover:bg-gray-200 transition-colors">Top
+                                Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 通用底部 Banner (获取 App) -->
+    <section id="download-section"
+        class="bg-[#f0f0f0] py-24 relative z-20 text-black overflow-hidden transition-all duration-500">
+        <!-- 未服务地区遮罩覆盖层 -->
+        <div
+            class="absolute inset-0 bg-gray-200/80 backdrop-blur-sm z-30 hidden flex-col items-center justify-center text-center download-disabled transition-all">
+            <i data-lucide="map-x" class="w-16 h-16 text-gray-400 mb-4"></i>
+            <h3 class="text-2xl font-black text-gray-800 mb-2">Not Available Yet</h3>
+            <p class="text-gray-600">TomaGo is currently not available in your region. Explore our vision instead.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 lg:px-12 reveal-up download-active transition-all">
+            <div class="download-copy">
+                <div class="download-logo-frame">
+                    <img id="download-app-logo" src="./images/app/app-logo-cn.png" alt="TomaGo App"
+                        class="w-full h-full object-contain">
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">
+                    <span class="lang-text cn">连接你的鲜活生活。</span><span class="lang-text tw">連接你的鮮活生活。</span><span
+                        class="lang-text en">Connect to a fresh life.</span><span
+                        class="lang-text jp">新鮮な生活とつながる。</span><span class="lang-text kr">신선한 삶과 연결하세요.</span><span
+                        class="lang-text pt">Conecte-se a uma vida fresca.</span>
+                </h2>
+                <p class="text-gray-500 mb-10 text-sm uppercase tracking-widest"><span class="brand-fanda">番达
+                        App</span><span class="brand-tomago">TomaGo App</span> - Available in your region</p>
+                <div class="download-actions">
+                    <button onclick="openDownloadModal()"
+                        class="hover-trigger bg-black text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-tomato transition-colors shadow-xl flex items-center gap-3">
+                        <i class="fa-solid fa-arrow-down-to-bracket text-base"></i>
+                        <span class="lang-text cn">获取应用</span><span class="lang-text tw">獲取應用</span><span
+                            class="lang-text en">Download App</span><span class="lang-text jp">ダウンロード</span><span
+                            class="lang-text kr">앱 다운로드</span><span class="lang-text pt">Baixar App</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mega Footer (全语言与地区合规) -->
+    <footer class="bg-black text-white pt-20 pb-12 border-t border-white/10 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- 拓展链接区 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 border-b border-white/10 pb-16">
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6"><span
+                            class="lang-text cn">探索</span><span class="lang-text tw">探索</span><span
+                            class="lang-text en">Explore</span><span class="lang-text jp">探索</span><span
+                            class="lang-text kr">탐색</span><span class="lang-text pt">Explorar</span></h4>
+                    <ul class="space-y-4 text-sm font-medium text-gray-300">
+                        <li><a href="#market" class="hover:text-tomato transition-colors hover-trigger">TomaGo
+                                Market</a></li>
+                        <li><a href="#mini" class="hover:text-tomato transition-colors hover-trigger">TomaGo Mini</a>
+                        </li>
+                        <li><a href="#locations" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">附近门店</span><span class="lang-text tw">附近門店</span><span
+                                    class="lang-text en">Find a Location</span><span
+                                    class="lang-text jp">店舗を探す</span><span class="lang-text kr">매장 찾기</span><span
+                                    class="lang-text pt">Encontrar Local</span></a></li>
+                        <li><a href="#express-delivery" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">即时配送</span><span class="lang-text tw">即時配送</span><span
+                                    class="lang-text en">Express Delivery</span><span
+                                    class="lang-text jp">即時配送</span><span class="lang-text kr">빠른 배송</span><span
+                                    class="lang-text pt">Entrega Expressa</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6"><span
+                            class="lang-text cn">服务合作</span><span class="lang-text tw">服務合作</span><span
+                            class="lang-text en">Services</span><span class="lang-text jp">サービス</span><span
+                            class="lang-text kr">서비스</span><span class="lang-text pt">Serviços</span></h4>
+                    <ul class="space-y-4 text-sm font-medium text-gray-300">
+                        <li><a href="#merchant-entry" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">商家入驻</span><span class="lang-text tw">商家入駐</span><span
+                                    class="lang-text en">Partner with Us</span><span
+                                    class="lang-text jp">パートナー募集</span><span class="lang-text kr">파트너 제휴</span><span
+                                    class="lang-text pt">Seja Parceiro</span></a></li>
+                        <li><a href="#rider-join" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">成为骑手</span><span class="lang-text tw">成為騎手</span><span
+                                    class="lang-text en">Become a Rider</span><span
+                                    class="lang-text jp">配達員になる</span><span class="lang-text kr">라이더 지원</span><span
+                                    class="lang-text pt">Seja um Entregador</span></a></li>
+                        <li><a href="#merchant-cooperation" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">商务合作</span><span class="lang-text tw">商務合作</span><span
+                                    class="lang-text en">Business Cooperation</span><span
+                                    class="lang-text jp">ビジネス連携</span><span class="lang-text kr">비즈니스 협력</span><span
+                                    class="lang-text pt">Cooperacao Comercial</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6"><span
+                            class="lang-text cn">价值观</span><span class="lang-text tw">價值觀</span><span
+                            class="lang-text en">Values</span><span class="lang-text jp">価値観</span><span
+                            class="lang-text kr">가치관</span><span class="lang-text pt">Valores</span></h4>
+                    <ul class="space-y-4 text-sm font-medium text-gray-300">
+                        <li><a href="#" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">鲜活保证</span><span class="lang-text tw">鮮活保證</span><span
+                                    class="lang-text en">Freshness Guarantee</span><span
+                                    class="lang-text jp">鮮度保証</span><span class="lang-text kr">신선도 보장</span><span
+                                    class="lang-text pt">Garantia de Frescor</span></a></li>
+                        <li><a href="#" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">社区影响</span><span class="lang-text tw">社區影響</span><span
+                                    class="lang-text en">Community Impact</span><span
+                                    class="lang-text jp">コミュニティ貢献</span><span class="lang-text kr">지역사회 공헌</span><span
+                                    class="lang-text pt">Impacto na Comunidade</span></a></li>
+                        <li><a href="#" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">绿色环保</span><span class="lang-text tw">綠色環保</span><span
+                                    class="lang-text en">Sustainability</span><span
+                                    class="lang-text jp">持続可能性</span><span class="lang-text kr">지속 가능성</span><span
+                                    class="lang-text pt">Sustentabilidade</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6"><span
+                            class="lang-text cn">关于公司</span><span class="lang-text tw">關於公司</span><span
+                            class="lang-text en">About Us</span><span class="lang-text jp">会社概要</span><span
+                            class="lang-text kr">회사 소개</span><span class="lang-text pt">Sobre Nós</span></h4>
+                    <ul class="space-y-4 text-sm font-medium text-gray-300">
+                        <li><a href="#newsroom" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">新闻中心</span><span class="lang-text tw">新聞中心</span><span
+                                    class="lang-text en">Newsroom</span><span class="lang-text jp">ニュースルーム</span><span
+                                    class="lang-text kr">뉴스룸</span><span class="lang-text pt">Notícias</span></a></li>
+                        <li><a href="#" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">投资者关系</span><span class="lang-text tw">投資者關係</span><span
+                                    class="lang-text en">Investors</span><span class="lang-text jp">投資家情報</span><span
+                                    class="lang-text kr">투자자 정보</span><span class="lang-text pt">Investidores</span></a>
+                        </li>
+                        <li><a href="#" class="hover:text-tomato transition-colors hover-trigger"><span
+                                    class="lang-text cn">人才招聘</span><span class="lang-text tw">人才招聘</span><span
+                                    class="lang-text en">Careers</span><span class="lang-text jp">採用情報</span><span
+                                    class="lang-text kr">채용</span><span class="lang-text pt">Carreiras</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 法规与地址区 (由 CSS 的 region 控制显隐) -->
+            <div class="mb-12 border-b border-white/10 pb-8 text-white/40 text-xs leading-relaxed space-y-2">
+                <!-- CN -->
+                <div class="reg-only cn">
+                    <p class="font-bold text-white/60 mb-2">番达中国网络技术服务有限公司</p>
+                    <p>地址：中国北京市朝阳区建国路81号</p>
+                    <p>沪ICP备2026000001号-1 | 增值电信业务经营许可证：B2-20260001 | 公安备案号 31011502000000</p>
+                </div>
+                <!-- HK -->
+                <div class="reg-only hk">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Hong Kong) Network Technology Inc.</p>
+                    <p>地址：中華人民共和國香港特別行政區香港島中環皇后大道中99號</p>
+                    <p class="text-tomato/80 font-bold mt-2">⚠️ 提防騙案：請勿向陌生人透露個人驗證碼或密碼。TomaGo 不會要求您轉賬至個人賬戶。</p>
+                </div>
+                <!-- MO -->
+                <div class="reg-only mo">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Macau) Network Technology Inc.</p>
+                    <p>地址：中華人民共和國澳門特別行政區大堂區南灣大馬路</p>
+                    <p>Endereço: Avenida da Praia Grande, Macau SAR, PR China</p>
+                </div>
+                <!-- TW -->
+                <div class="reg-only tw">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Taiwan) Network Technology Inc.</p>
+                    <p>地址：台灣台北市信義區信義路五段7號</p>
+                    <p>依中華民國消費者保護法規定，享有商品七天猶豫期之權益。生鮮食品類因衛生因素，拆封後恕不退換。</p>
+                </div>
+                <!-- JP -->
+                <div class="reg-only jp">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Japan) Network Technology Inc.</p>
+                    <p>Address: 東京都渋谷区神宮前1-2-3</p>
+                    <p>特定商取引法に基づく表記 | 酒類販売管理者標識</p>
+                </div>
+                <!-- KR -->
+                <div class="reg-only kr">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Korea) Network Technology Inc.</p>
+                    <p>Address: 서울특별시 강남구 테헤란로 123</p>
+                    <p>사업자등록번호: 123-45-67890 | 통신판매업신고: 2026-서울강남-0001</p>
+                </div>
+                <!-- NA -->
+                <div class="reg-only na">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (North America) Network Technology Inc.</p>
+                    <p>Address: 1 Market St, San Francisco, CA 94105, United States</p>
+                    <p>Terms of Service are subject to US state and federal regulations.</p>
+                </div>
+                <!-- EU -->
+                <div class="reg-only eu">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (Europe) Network Technology Inc.</p>
+                    <p>Address: Potsdamer Platz 1, 10785 Berlin, Germany</p>
+                    <p>In compliance with the General Data Protection Regulation (GDPR).</p>
+                </div>
+                <!-- ANZ -->
+                <div class="reg-only anz">
+                    <p class="font-bold text-white/60 mb-2">TomaGo (ANZ) Network Technology Inc.</p>
+                    <p>Address: 100 Barangaroo Ave, Sydney NSW 2000, Australia</p>
+                    <p>Subject to Australian Consumer Law guarantees.</p>
+                </div>
+            </div>
+
+            <!-- 底栏工具条 -->
+            <div class="flex flex-col lg:flex-row justify-between items-center text-xs font-medium text-gray-500 gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-white font-bold tracking-widest brand-fanda">番达</span>
+                    <span class="text-white font-bold tracking-widest brand-tomago">TomaGo</span>
+                    <span>&copy; 2026 TomaGo Network Inc. All rights reserved.</span>
+                </div>
+
+                <!-- 区域与语言设置触发器 -->
+                <button onclick="openRegionModal()"
+                    class="flex items-center gap-3 bg-white/5 rounded-full px-5 py-2.5 border border-white/10 hover-trigger hover:bg-white/10 transition-colors">
+                    <i data-lucide="globe" class="w-4 h-4 text-white"></i>
+                    <span class="text-white font-bold" id="current-region-display">中国大陆 (Mainland China)</span>
+                    <span class="text-white/30">|</span>
+                    <span class="text-tomato font-bold" id="current-currency-display">CNY ¥</span>
+                </button>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors hover-trigger">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors hover-trigger">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 模态框：区域选择 (Region & Language Selector) ==================== -->
+    <div id="region-modal" class="modal-overlay">
+        <div
+            class="modal-content glass-box-light bg-white rounded-3xl p-8 max-w-4xl w-full mx-4 relative overflow-hidden text-black shadow-2xl h-[80vh] flex flex-col">
+            <button onclick="closeModal('region-modal')"
+                class="absolute top-6 right-6 text-gray-400 hover:text-black hover-trigger z-10 bg-gray-100 p-2 rounded-full"><i
+                    data-lucide="x"></i></button>
+            <h3 class="text-2xl font-black mb-2">选择您的地区与语言</h3>
+            <p class="text-gray-500 text-sm mb-8">Select your region and language. 切换地区将改变结算货币与适用的服务。</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto pr-2 no-scrollbar pb-10">
+                <!-- 大中华区 -->
+                <div class="space-y-3">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 border-b pb-2">大中华区 Greater
+                        China</p>
+                    <button onclick="setRegion('cn')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="cn">
+                        <div>
+                            <div class="font-bold text-sm">中国大陆 Mainland China</div>
+                            <div class="text-xs text-gray-500">简体中文 · CNY (¥)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <!-- HK Options -->
+                    <button onclick="setRegion('hk-tw')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="hk-tw">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>香港 Hong Kong SAR</div>
+                            <div class="text-xs text-gray-500">繁體中文 · HKD (HK$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('hk-en')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="hk-en">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>Hong Kong - English</div>
+                            <div class="text-xs text-gray-500">English · HKD (HK$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <!-- MO Options -->
+                    <button onclick="setRegion('mo-tw')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="mo-tw">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>澳门 Macao SAR</div>
+                            <div class="text-xs text-gray-500">繁體中文 · MOP (MOP$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('mo-en')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="mo-en">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>Macao - English</div>
+                            <div class="text-xs text-gray-500">English · MOP (MOP$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('mo-pt')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="mo-pt">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>Macau - Português</div>
+                            <div class="text-xs text-gray-500">Português · MOP (MOP$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <!-- TW Option -->
+                    <button onclick="setRegion('tw')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="tw">
+                        <div>
+                            <div class="font-bold text-sm"><span class="prefix-cn">中国</span>台湾 Taiwan</div>
+                            <div class="text-xs text-gray-500">繁體中文 · TWD (NT$)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                </div>
+                <!-- 亚太区 -->
+                <div class="space-y-3">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 border-b pb-2">Asia Pacific
+                    </p>
+                    <button onclick="setRegion('jp')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="jp">
+                        <div>
+                            <div class="font-bold text-sm">日本 Japan</div>
+                            <div class="text-xs text-gray-500">日本語 · JPY (¥)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('kr')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="kr">
+                        <div>
+                            <div class="font-bold text-sm">대한민국 South Korea</div>
+                            <div class="text-xs text-gray-500">한국어 · KRW (₩)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('anz')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="anz">
+                        <div>
+                            <div class="font-bold text-sm">Australia &amp; NZ</div>
+                            <div class="text-xs text-gray-500">English · AUD / NZD</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                </div>
+                <!-- 欧美及其他 -->
+                <div class="space-y-3">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 border-b pb-2">Americas &amp;
+                        Europe</p>
+                    <button onclick="setRegion('na')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="na">
+                        <div>
+                            <div class="font-bold text-sm">North America</div>
+                            <div class="text-xs text-gray-500">English · USD ($)</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <button onclick="setRegion('eu')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border hover:border-black transition-colors text-left hover-trigger group"
+                        data-region-btn="eu">
+                        <div>
+                            <div class="font-bold text-sm">Europe</div>
+                            <div class="text-xs text-gray-500">English · EUR / GBP</div>
+                        </div>
+                        <i data-lucide="check" class="w-4 h-4 text-tomato opacity-0 group-[.selected]:opacity-100"></i>
+                    </button>
+                    <!-- 未服务地区 -->
+                    <button onclick="setRegion('row')"
+                        class="w-full flex items-center justify-between p-3 rounded-xl border border-dashed border-gray-300 hover:border-black transition-colors text-left hover-trigger group mt-6 bg-gray-50"
+                        data-region-btn="row">
+                        <div>
+                            <div class="font-bold text-sm">Other Regions / Rest of World</div>
+                            <div class="text-xs text-gray-500">Global English</div>
+                        </div>
+                        <i data-lucide="globe" class="w-4 h-4 text-gray-400 group-hover:text-black"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 模态框：未服务地区提示 ==================== -->
+    <div id="alert-modal" class="modal-overlay">
+        <div class="modal-content bg-white rounded-3xl p-8 max-w-sm w-full mx-4 text-center text-black shadow-2xl">
+            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4"><i
+                    data-lucide="map-pin-off" class="w-8 h-8 text-gray-500"></i></div>
+            <h3 class="text-2xl font-black mb-2">Service Unavailable</h3>
+            <p class="text-gray-600 text-sm mb-6">TomaGo 暂未对您的国家或地区提供服务。您可以先浏览我们的官网了解品牌愿景。</p>
+            <button onclick="closeModal('alert-modal')"
+                class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-gray-800 transition-colors hover-trigger">继续浏览
+                Continue</button>
+        </div>
+    </div>
+
+    <!-- ==================== 模态框：下载选项 (Download Options) ==================== -->
+    <div id="download-modal" class="modal-overlay">
+        <div class="modal-content bg-white rounded-3xl p-8 max-w-4xl w-full mx-4 text-black shadow-2xl relative">
+            <button onclick="closeModal('download-modal')"
+                class="absolute top-6 right-6 text-gray-400 hover:text-black hover-trigger z-10 bg-gray-100 p-2 rounded-full"><i
+                    data-lucide="x"></i></button>
+            <div class="pr-12">
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-3">Download Options</p>
+                <h3 class="text-3xl font-black mb-2">
+                    <span class="lang-text cn">选择适合你的下载版本</span>
+                    <span class="lang-text tw">選擇適合你的下載版本</span>
+                    <span class="lang-text en">Choose Your Download</span>
+                    <span class="lang-text jp">ダウンロード版を選択</span>
+                    <span class="lang-text kr">다운로드 버전 선택</span>
+                    <span class="lang-text pt">Escolha seu download</span>
+                </h3>
+                <p id="download-modal-subtitle" class="text-gray-500 text-sm mb-8">Select the correct app package for
+                    your region.</p>
+            </div>
+
+            <div id="download-options" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+            <div id="download-feedback"
+                class="mt-6 hidden rounded-2xl border border-tomato/20 bg-tomato/5 px-4 py-3 text-sm text-gray-700">
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 模态框：登录与注册 (Auth System) ==================== -->
+    <div id="auth-modal" class="modal-overlay">
+        <div
+            class="modal-content bg-white rounded-3xl w-full max-w-4xl mx-4 flex overflow-hidden shadow-2xl h-[600px] relative text-black">
+            <button onclick="closeModal('auth-modal')"
+                class="absolute top-4 right-4 text-gray-400 hover:text-black hover-trigger z-20 bg-white/50 rounded-full p-2 backdrop-blur-sm"><i
+                    data-lucide="x"></i></button>
+
+            <div
+                class="hidden md:flex flex-col justify-between w-5/12 bg-black text-white p-10 relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595856411986-e7ddb508f7aa?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center opacity-30">
+                </div>
+                <div class="relative z-10">
+                    <img src="./images/brand/tomago-light.png" alt="TomaGo" class="h-10 w-auto mb-4 object-contain">
+                    <p class="text-white/60 text-sm">Fresh. Fast. Delivered.</p>
+                </div>
+                <div class="relative z-10">
+                    <p class="text-xs uppercase tracking-widest text-white/50 mb-2">Welcome Back</p>
+                    <p class="font-medium text-sm leading-relaxed">
+                        <span class="lang-text cn">登录以管理您的地址、查看历史订单，并享受社区专属的新鲜权益。</span>
+                        <span class="lang-text tw">登入以管理您的地址、查看歷史訂單，並享受專屬新鮮權益。</span>
+                        <span class="lang-text en">Sign in to manage your addresses, track orders, and enjoy exclusive
+                            freshness benefits.</span>
+                        <span class="lang-text jp">ログインして注文履歴を管理し、特典をお楽しみください。</span>
+                        <span class="lang-text kr">로그인하여 주소를 관리하고 신선한 혜택을 누리세요.</span>
+                        <span class="lang-text pt">Faça login para gerenciar endereços e aproveitar benefícios
+                            exclusivos.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="w-full md:w-7/12 p-8 md:p-12 flex flex-col justify-center overflow-y-auto no-scrollbar relative">
+                <div class="flex gap-6 border-b mb-8">
+                    <button onclick="switchAuthTab('login')" id="tab-login"
+                        class="pb-2 text-sm font-bold border-b-2 border-black hover-trigger transition-colors">
+                        <span class="lang-text cn">登录</span><span class="lang-text tw">登入</span><span
+                            class="lang-text en">Login</span><span class="lang-text jp">ログイン</span><span
+                            class="lang-text kr">로그인</span><span class="lang-text pt">Entrar</span>
+                    </button>
+                    <button onclick="switchAuthTab('register')" id="tab-register"
+                        class="pb-2 text-sm font-bold border-b-2 border-transparent text-gray-400 hover:text-black hover-trigger transition-colors">
+                        <span class="lang-text cn">创建账号</span><span class="lang-text tw">創建賬號</span><span
+                            class="lang-text en">Sign Up</span><span class="lang-text jp">新規登録</span><span
+                            class="lang-text kr">회원가입</span><span class="lang-text pt">Registrar</span>
+                    </button>
+                </div>
+
+                <!-- 登录表单 -->
+                <div id="form-login" class="space-y-5 animate-[fadeIn_0.3s]">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">
+                            <span class="lang-text cn">手机号 / 邮箱</span><span class="lang-text tw">手機號 / 郵箱</span><span
+                                class="lang-text en">Email / Phone</span><span class="lang-text jp">メール /
+                                電話番号</span><span class="lang-text kr">이메일 / 전화번호</span><span class="lang-text pt">E-mail
+                                / Telefone</span>
+                        </label>
+                        <input type="text"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all"
+                            placeholder="Enter your account">
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <label class="block text-xs font-bold text-gray-500">
+                                <span class="lang-text cn">密码</span><span class="lang-text tw">密碼</span><span
+                                    class="lang-text en">Password</span><span class="lang-text jp">パスワード</span><span
+                                    class="lang-text kr">비밀번호</span><span class="lang-text pt">Senha</span>
+                            </label>
+                            <a href="#" class="text-xs text-tomato hover:underline hover-trigger">Forgot?</a>
+                        </div>
+                        <input type="password"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all"
+                            placeholder="Enter password">
+                    </div>
+                    <button onclick="loginSuccess()"
+                        class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-gray-800 transition-colors hover-trigger mt-4 shadow-lg shadow-black/20">
+                        <span class="lang-text cn">登录</span><span class="lang-text tw">登入</span><span
+                            class="lang-text en">Sign In</span><span class="lang-text jp">ログイン</span><span
+                            class="lang-text kr">로그인</span><span class="lang-text pt">Entrar</span>
+                    </button>
+
+                    <div class="relative py-4">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center"><span
+                                class="bg-white px-4 text-xs text-gray-400 uppercase">Or continue with</span></div>
+                    </div>
+
+                    <!-- 中国大陆专属: 微信 -->
+                    <div class="show-cn-auth">
+                        <button onclick="loginSuccess()"
+                            class="w-full border border-gray-200 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 hover-trigger text-sm">
+                            <i data-lucide="message-circle" class="text-green-500 w-5 h-5"></i> 微信快捷登录
+                        </button>
+                    </div>
+                    <!-- 海外专属: Google, Apple, Facebook -->
+                    <div class="show-global-auth grid grid-cols-3 gap-3">
+                        <button onclick="loginSuccess()"
+                            class="social-login-btn border border-gray-200 py-3 rounded-xl hover:bg-gray-50 transition-colors hover-trigger text-[#4285F4]"><i
+                                class="fa-brands fa-google text-lg"></i></button>
+                        <button onclick="loginSuccess()"
+                            class="social-login-btn border border-gray-200 py-3 rounded-xl hover:bg-gray-50 transition-colors hover-trigger bg-black text-white"><i
+                                class="fa-brands fa-apple text-lg"></i></button>
+                        <button onclick="loginSuccess()"
+                            class="social-login-btn border border-gray-200 py-3 rounded-xl hover:bg-gray-50 transition-colors hover-trigger text-[#1877F2]"><i
+                                class="fa-brands fa-facebook-f text-lg"></i></button>
+                    </div>
+                </div>
+
+                <!-- 注册表单 -->
+                <div id="form-register" class="space-y-4 hidden animate-[fadeIn_0.3s]">
+
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="block text-xs font-bold text-gray-500">
+                            <span class="lang-text cn">注册方式</span><span class="lang-text en">Registration
+                                Method</span><span class="lang-text tw">註冊方式</span><span
+                                class="lang-text jp">登録方法</span><span class="lang-text kr">가입 방법</span><span
+                                class="lang-text pt">Método de Registro</span>
+                        </label>
+                        <button onclick="toggleRegMethod()"
+                            class="text-xs text-tomato hover:underline hover-trigger font-bold">
+                            <span class="reg-method-email hidden">
+                                <span class="lang-text cn">使用邮箱注册</span><span class="lang-text en">Use Email
+                                    Instead</span><span class="lang-text tw">使用郵箱註冊</span><span
+                                    class="lang-text jp">メールで登録</span><span class="lang-text kr">이메일로 가입</span><span
+                                    class="lang-text pt">Usar E-mail</span>
+                            </span>
+                            <span class="reg-method-phone block">
+                                <span class="lang-text cn">使用手机号注册</span><span class="lang-text en">Use Phone
+                                    Instead</span><span class="lang-text tw">使用手機註冊</span><span
+                                    class="lang-text jp">電話番号で登録</span><span class="lang-text kr">전화번호로 가입</span><span
+                                    class="lang-text pt">Usar Telefone</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Phone Block -->
+                    <div id="reg-input-phone" class="block">
+                        <div class="flex gap-2">
+                            <select
+                                class="border border-gray-200 rounded-xl px-2 py-3 text-sm bg-gray-50 outline-none w-[110px] shrink-0 cursor-pointer hover-trigger custom-scrollbar">
+                                <option value="+86">+86 🇨🇳</option>
+                                <option value="+1">+1 🇺🇸/🇨🇦</option>
+                                <option value="+44">+44 🇬🇧</option>
+                                <option value="+81">+81 🇯🇵</option>
+                                <option value="+82">+82 🇰🇷</option>
+                                <option value="+852">+852 🇭🇰</option>
+                                <option value="+853">+853 🇲🇴</option>
+                                <option value="+886">+886 🇹🇼</option>
+                                <option disabled>──────</option>
+                                <option value="+7">+7 🇷🇺</option>
+                                <option value="+20">+20 🇪🇬</option>
+                                <option value="+27">+27 🇿🇦</option>
+                                <option value="+31">+31 🇳🇱</option>
+                                <option value="+32">+32 🇧🇪</option>
+                                <option value="+33">+33 🇫🇷</option>
+                                <option value="+34">+34 🇪🇸</option>
+                                <option value="+39">+39 🇮🇹</option>
+                                <option value="+41">+41 🇨🇭</option>
+                                <option value="+46">+46 🇸🇪</option>
+                                <option value="+47">+47 🇳🇴</option>
+                                <option value="+49">+49 🇩🇪</option>
+                                <option value="+51">+51 🇵🇪</option>
+                                <option value="+52">+52 🇲🇽</option>
+                                <option value="+54">+54 🇦🇷</option>
+                                <option value="+55">+55 🇧🇷</option>
+                                <option value="+56">+56 🇨🇱</option>
+                                <option value="+57">+57 🇨🇴</option>
+                                <option value="+60">+60 🇲🇾</option>
+                                <option value="+61">+61 🇦🇺</option>
+                                <option value="+62">+62 🇮🇩</option>
+                                <option value="+63">+63 🇵🇭</option>
+                                <option value="+64">+64 🇳🇿</option>
+                                <option value="+65">+65 🇸🇬</option>
+                                <option value="+66">+66 🇹🇭</option>
+                                <option value="+84">+84 🇻🇳</option>
+                                <option value="+90">+90 🇹🇷</option>
+                                <option value="+91">+91 🇮🇳</option>
+                                <option value="+92">+92 🇵🇰</option>
+                                <option value="+93">+93 🇦🇫</option>
+                                <option value="+94">+94 🇱🇰</option>
+                                <option value="+98">+98 🇮🇷</option>
+                                <option value="+212">+212 🇲🇦</option>
+                                <option value="+234">+234 🇳🇬</option>
+                                <option value="+254">+254 🇰🇪</option>
+                                <option value="+351">+351 🇵🇹</option>
+                                <option value="+353">+353 🇮🇪</option>
+                                <option value="+358">+358 🇫🇮</option>
+                                <option value="+380">+380 🇺🇦</option>
+                                <option value="+420">+420 🇨🇿</option>
+                                <option value="+855">+855 🇰🇭</option>
+                                <option value="+880">+880 🇧🇩</option>
+                                <option value="+966">+966 🇸🇦</option>
+                                <option value="+971">+971 🇦🇪</option>
+                                <option value="+972">+972 🇮🇱</option>
+                            </select>
+                            <input type="tel"
+                                class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none"
+                                placeholder="Phone Number">
+                        </div>
+                    </div>
+
+                    <!-- Email Block -->
+                    <div id="reg-input-email" class="hidden">
+                        <input type="email"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none"
+                            placeholder="Email Address">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">
+                            <span class="lang-text cn">验证码</span><span class="lang-text en">Verification
+                                Code</span><span class="lang-text tw">驗證碼</span><span class="lang-text pt">Código de
+                                Verificação</span>
+                        </label>
+                        <div class="flex gap-2">
+                            <input type="text"
+                                class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none"
+                                placeholder="6-digit code">
+                            <button
+                                class="bg-gray-100 px-4 rounded-xl text-xs font-bold hover:bg-gray-200 transition-colors whitespace-nowrap hover-trigger">Send</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1">
+                            <span class="lang-text cn">收货地址</span><span class="lang-text en">Delivery
+                                Address</span><span class="lang-text tw">收貨地址</span><span
+                                class="lang-text jp">配送先住所</span><span class="lang-text kr">배송 주소</span><span
+                                class="lang-text pt">Endereço de Entrega</span>
+                        </label>
+                        <input type="text"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none mb-2"
+                            placeholder="Street / Community / Room">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div><input type="password"
+                                class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none"
+                                placeholder="Password"></div>
+                        <div><input type="password"
+                                class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:border-black transition-all outline-none"
+                                placeholder="Confirm"></div>
+                    </div>
+                    <div class="flex items-start gap-2 pt-2">
+                        <input type="checkbox" class="mt-1 hover-trigger" id="terms-check">
+                        <label for="terms-check" class="text-xs text-gray-500 leading-tight">I agree to the Terms and
+                            Privacy Policy.</label>
+                    </div>
+                    <button onclick="loginSuccess()"
+                        class="w-full bg-tomato text-white font-bold py-3 rounded-xl hover:bg-red-600 transition-colors hover-trigger mt-2 shadow-lg shadow-tomato/30">
+                        <span class="lang-text cn">创建账号</span><span class="lang-text tw">創建賬號</span><span
+                            class="lang-text en">Create Account</span><span class="lang-text jp">新規登録</span><span
+                            class="lang-text kr">가입하기</span><span class="lang-text pt">Criar Conta</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 侧滑面板：组织架构详情 ==================== -->
+    <div id="org-side-panel" class="side-panel text-white p-8 md:p-12 shadow-2xl">
+        <button onclick="closeOrgDetail()"
+            class="absolute top-8 right-8 text-gray-400 hover:text-white hover-trigger"><i data-lucide="x"
+                class="w-8 h-8"></i></button>
+        <div id="org-content-hq" class="hidden org-content-block">
+            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6"><i
+                    data-lucide="building-2" class="w-8 h-8"></i></div>
+            <h3 class="text-3xl font-black mb-2">集团总部 / Headquarters</h3>
+            <p class="text-sm uppercase tracking-widest text-gray-500 mb-8 border-b border-white/10 pb-6">Strategy &amp;
+                Control</p>
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-tomato mb-2">财务中心 (Finance)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        负责公司整体财务管理与资金运营，包括预算管理、成本控制、财务审计、投融资管理以及财务分析等工作，同时为各事业群提供财务BP支持。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tomato mb-2">人力资源中心 (HR)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">负责公司组织架构设计、人才招聘、薪酬福利体系、绩效考核以及员工发展体系建设，并通过 HRBP
+                        机制支持各事业群的人才管理需求。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tomato mb-2">法务与合规中心 (Legal &amp; Compliance)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">负责公司合同管理、法律风险控制、合规管理以及知识产权保护等工作，保障公司业务在各地区合规开展。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tomato mb-2">品牌与公共事务 (Brand &amp; PR)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">负责品牌战略、市场传播、媒体关系以及公共事务管理，维护公司品牌形象并推动品牌影响力提升。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tomato mb-2">行政与运营支持中心 (Administration)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">负责办公资源管理、行政服务、企业采购与内部运营支持等工作，保障公司日常运营效率。</p>
+                </div>
+            </div>
+        </div>
+        <div id="org-content-bg" class="hidden org-content-block">
+            <div class="w-16 h-16 bg-tomato/20 rounded-full flex items-center justify-center mb-6"><i
+                    data-lucide="network" class="w-8 h-8 text-tomato"></i></div>
+            <h3 class="text-3xl font-black mb-2">核心事业群 / Business Groups</h3>
+            <p class="text-sm uppercase tracking-widest text-tomato mb-8 border-b border-white/10 pb-6">Core Engines</p>
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-white mb-2">零售事业群 Retail Group (RG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">零售事业群负责 TomaGo 自营门店体系的建设与运营，包括番达市集（TomaGo
+                        Market）与番达小店（TomaGo
+                        Mini）。该事业群主要承担门店拓展、门店运营管理、商品销售与陈列管理等职责，同时为平台线上订单提供拣货与履约服务。通过在城市社区布局自营门店网络，零售事业群既服务线下消费场景，也为平台即时零售业务提供稳定的履约基础。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-2">平台生态事业群 Marketplace Group (MPG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">平台生态事业群负责 TomaGo
+                        的合作商家网络建设与平台交易体系运营，主要面向城市中的大型商超、便利店、生鲜店以及其他本地零售商。该事业群负责商家入驻、商家运营、商品上架管理以及平台商家服务体系建设，使合作商家能够通过平台开展线上销售并接入即时配送服务。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-2">即时配送事业群 Express Group (EXG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">即时配送事业群负责 TomaGo
+                        的城市配送网络建设与运力管理，包括骑手体系管理、订单调度系统运营以及配送效率优化等工作。通过数字化调度系统将订单分配至最合适的履约节点，并协调配送骑手完成商品配送，从而保障平台能够在社区范围内提供稳定高效的即时配送服务。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-2">技术平台事业群 Technology Group (TG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">技术平台事业群负责 TomaGo
+                        的核心技术系统建设与平台产品研发，包括用户端应用、商家管理系统、配送调度系统以及数据平台等关键技术基础设施。该事业群通过持续的技术研发与产品迭代，为平台提供稳定可靠的数字化系统支持，并推动零售、配送与供应链业务的数字化升级。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-2">供应链与商品事业群 Supply Chain Group (SCG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        供应链事业群负责平台整体商品供应体系建设，包括商品采购、供应商管理、仓储物流协同以及自有品牌商品开发等业务。通过规模化采购与供应链整合，该事业群为门店与平台商家提供稳定的商品来源，同时持续优化商品结构，并推动平台自有品牌的发展。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-2">广告与数据事业群 Advertising &amp; Data Group (ADG)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        广告与数据事业群负责平台商业化能力建设与数据产品开发，主要业务包括平台广告服务、品牌推广解决方案、商家营销工具以及商业数据分析服务。通过整合平台交易数据与用户行为数据，该事业群为品牌与商家提供精准营销能力，并逐步形成平台重要的商业化收入来源。
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div id="org-content-city" class="hidden org-content-block">
+            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6"><i
+                    data-lucide="map-pin" class="w-8 h-8"></i></div>
+            <h3 class="text-3xl font-black mb-2">城市运营 / City Operations</h3>
+            <p class="text-sm uppercase tracking-widest text-gray-500 mb-8 border-b border-white/10 pb-6">Local
+                Execution</p>
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-leaf mb-2">大区运营中心</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">统筹区域市场管理与战略执行，协调多个同城业务协同发展。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-leaf mb-2">城市公司</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">具体城市的业务运营，落地门店管理、商家地推、末端配送网络的日常运作以及本地市场营销推广。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="org-side-mask"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9000] hidden transition-opacity opacity-0"
+        onclick="closeOrgDetail()"></div>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
